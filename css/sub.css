@@ -1,0 +1,916 @@
+@charset "utf-8";
+
+/* 창원단감아삭체 웹폰트 */
+@font-face {
+    font-family: 'ChangwonDanggamAsak';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 경복궁 수문장 제목체 웹폰트 */
+@font-face {
+    font-family: 'GyeongbokgungSumunjangTitle';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-3@1.0/Sumunjang_TitleB.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    cursor: url("../images/Donggeuli.png") 16 16, auto;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #111;
+    background: url(../images/Background_2.jpg) center;
+}
+
+/* ================================== header ================================== */
+#wrap {
+    min-width: 1200px;
+    height: 90px;
+
+    /* 로고와 아이콘 */
+    position: relative;
+}
+
+#header {
+    width: 1740px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    /* position 자식 */
+    position: relative;
+    z-index: 2;
+    /* 빈 영역이 아래 메뉴 클릭을 막지 않게 설정 */
+    pointer-events: none;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.logo img {
+    display: block;
+    width: 110px;
+    height: auto;
+}
+
+/* 아이콘 */
+.util {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    position: absolute;
+    top: 50%;
+    right: 270px;
+    transform: translateY(-50%);
+}
+
+.util li:first-child img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.util li:last-child img {
+    object-fit: contain;
+}
+
+.logo a,
+.util a {
+    pointer-events: auto;
+}
+
+/* ===== nav ====== */
+#nav {
+    width: 1200px;
+    height: 90px;
+    box-sizing: border-box;
+    padding-right: 160px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 15px;
+
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: all 0.5s;
+}
+
+.gnb>li>a:hover {
+    color: #936b3c;
+}
+
+/* 검색바 */
+.search_bar {
+    flex-shrink: 0;
+}
+
+.popular_search {
+    width: 245px;
+    height: 42px;
+    padding: 0 14px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+/* 인기 메뉴버튼 */
+.popular_open {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.chart_label {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* 메뉴 */
+.popular_window {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    overflow: hidden;
+}
+
+.popular_search .rank {
+    color: #ed3027;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.popular_list {
+    display: block;
+    margin-top: 0;
+}
+
+.popular_item {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.popular_search .search_input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    font-size: 12px;
+}
+
+.search_input::placeholder {
+    color: #888;
+}
+
+.search_submit {
+    flex-shrink: 0;
+    width: 26px;
+    height: 30px;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+    background-image: url(../images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+
+    cursor: pointer;
+}
+
+.popular_search:focus-within {
+    box-shadow: 0 0 0 2px #b39454;
+}
+
+.popular_search [hidden] {
+    display: none !important;
+}
+
+/* ================================== 베너 ================================== */
+
+#visual {
+    width: 100%;
+    max-width: 1920px;
+    height: 860px;
+    margin: 0 auto;
+}
+
+#visual .mySwiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#visual .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner_progress {
+    width: 600px;
+    max-width: calc(100% - 120px);
+    height: 60px;
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.progress_track {
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.progress_fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background-color: #cc1e1e;
+}
+
+#visual .progress_character {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    transform: translateX(-50%) scaleX(-1);
+}
+
+.visual_text {
+    position: absolute;
+    left: 60px;
+    bottom: 45px;
+    z-index: 10;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.visual_text p {
+    font-size: 16px;
+}
+
+#visual .swiper-slide {
+    position: relative;
+}
+
+/* ==================== 1. 공통 접근성 ==================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ==================== 2. 도시락 메뉴 전체 영역 ==================== */
+.lunch-menu {
+    width: min(1320px, calc(100% - 48px));
+    margin: 70px auto 0;
+    padding-bottom: 180px;
+}
+
+/* ==================== 3. 나무 메뉴판 / 가로 탭 ==================== */
+.menu-scroll {
+    overflow-x: auto;
+    border-radius: 24px;
+}
+
+.menu-tabs {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    min-width: 850px;
+    height: 166px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #a56632;
+}
+
+/* 세로 나뭇결 이미지를 회전하여 가로 메뉴판으로 사용 */
+.menu-tabs::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 166px;
+    height: 1600px;
+    top: 50%;
+    left: 50%;
+    background: url('../images/Background_3.png') center / cover;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.menu-tab {
+    position: relative;
+    z-index: 1;
+    border: 0;
+    padding: 0 18px;
+    background: transparent;
+    color: #fff7e9;
+    font: inherit;
+    font-size: 21px;
+    font-weight: 800;
+    cursor: pointer;
+    text-shadow: 0 2px 5px #623516;
+    white-space: nowrap;
+}
+
+.menu-tab:hover {
+    color: #fff0b5;
+}
+
+.menu-tab:focus-visible {
+    outline: 3px solid #fff0b5;
+    outline-offset: -10px;
+    border-radius: 20px;
+}
+
+.menu-tab[aria-selected="true"] {
+    color: white;
+}
+
+/* ==================== 4. 선택 강조 / 좌우 슬라이딩 ==================== */
+.menu-highlight {
+    position: absolute;
+    z-index: 0;
+    top: 22px;
+    left: 0;
+    width: calc(100% / 6);
+    height: 122px;
+    pointer-events: none;
+    transition: transform .55s cubic-bezier(.22, .8, .25, 1);
+}
+
+.menu-highlight img {
+    position: absolute;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 3px #58301966);
+}
+
+.menu-tray {
+    width: 80%;
+    height: 100%;
+    left: 10%;
+    top: 0;
+}
+
+/* 숟가락: 선택 영역 너비의 30%, 쟁반 왼쪽에 세로 중앙 정렬 */
+.menu-spoon {
+    width: 30%;
+    height: 100%;
+    left: -7%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 젓가락: 숟가락과 같은 크기, 쟁반 오른쪽에 대칭 배치 */
+.menu-chopsticks {
+    width: 30%;
+    height: 100%;
+    right: -7%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ==================== 5. 도시락 목록 / 이미지 ==================== */
+#menu-panel {
+    margin-top: 90px;
+}
+
+#menu-panel:focus-visible {
+    outline: 2px solid #9e683b;
+    outline-offset: 12px;
+}
+
+.lunch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 90px;
+    row-gap: 74px;
+    padding: 0 55px;
+}
+
+.lunch-card[hidden] {
+    display: none;
+}
+
+.lunch-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    transition: transform .25s;
+}
+
+.lunch-card:hover .lunch-image {
+    transform: translateY(-5px);
+}
+
+/* ==================== 6. 도시락 이름 / 설명 / 가격 ==================== */
+.lunch-details {
+    padding: 20px 0 0;
+}
+
+.lunch-badge {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 20px;
+    background: #dfe75e;
+    color: #454522;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.lunch-card h3 {
+    margin: 3px 0 8px;
+    font-size: 27px;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    word-break: keep-all;
+}
+
+.lunch-description {
+    max-width: 290px;
+    min-height: 38px;
+    font-size: 13px;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.lunch-price {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* ==================== 7. 푸터 ==================== */
+.site-footer {
+    padding: 38px 24px;
+    background: #59351f;
+}
+
+.footer-inner {
+    max-width: 1320px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    width: 130px;
+    height: auto;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-social img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-info {
+    flex-basis: 100%;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #ffffff66;
+    color: #fff5e5;
+    text-align: center;
+}
+
+/* ==================== 8. 기존 헤더 / 배너 화면 크기 보정 ==================== */
+#wrap {
+    min-width: 0;
+    height: 116px;
+}
+
+#header {
+    width: 90%;
+    max-width: 1740px;
+}
+
+#nav {
+    width: 74%;
+    max-width: 1320px;
+    height: 116px;
+    padding-right: 100px;
+}
+
+.gnb {
+    gap: 18px;
+}
+
+.gnb>li>a {
+    padding: 10px;
+}
+
+.util {
+    right: 0;
+    gap: 20px;
+}
+
+#visual {
+    height: auto;
+    aspect-ratio: 1920 / 860;
+}
+
+/* Swiper CDN 연결 실패 시에도 첫 배너가 보입니다. */
+#visual .swiper-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#visual .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== 9. 태블릿 / 모바일 ==================== */
+@media (max-width:1400px) {
+    #nav {
+        width: 76%;
+        padding-right: 80px;
+        gap: 10px;
+    }
+
+    .gnb {
+        gap: 6px;
+    }
+
+    .gnb>li>a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .popular_search {
+        width: 215px;
+    }
+
+    .logo img {
+        width: 95px;
+    }
+
+    .util {
+        gap: 12px;
+    }
+
+    .util img {
+        max-width: 36px;
+    }
+
+    .menu-tabs {
+        height: 140px;
+    }
+
+    .menu-highlight {
+        top: 15px;
+        height: 110px;
+    }
+
+    .menu-tab {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .lunch-grid {
+        column-gap: 65px;
+        padding: 0 40px;
+    }
+
+    .lunch-card h3 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width:1050px) {
+    #wrap {
+        height: 150px;
+    }
+
+    #header {
+        height: 75px;
+    }
+
+    #nav {
+        top: 75px;
+        width: 94%;
+        height: 75px;
+        padding: 0;
+    }
+
+    .lunch-menu {
+        margin-top: 36px;
+        padding-bottom: 90px;
+    }
+
+    .lunch-grid {
+        gap: 48px 32px;
+        padding: 0 16px;
+    }
+
+    #menu-panel {
+        margin-top: 50px;
+    }
+
+    .lunch-card h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:650px) {
+    #nav {
+        overflow-x: auto;
+    }
+
+    .gnb {
+        gap: 4px;
+    }
+
+    .gnb>li>a {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    .search_bar {
+        display: none;
+    }
+
+    .lunch-menu {
+        width: calc(100% - 28px);
+    }
+
+    .menu-tabs {
+        min-width: 840px;
+        height: 112px;
+    }
+
+    .menu-highlight {
+        top: 10px;
+        height: 92px;
+    }
+
+    .menu-tab {
+        font-size: 16px;
+    }
+
+    .lunch-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 4px;
+        gap: 38px 20px;
+    }
+
+    .lunch-card h3 {
+        font-size: 18px;
+    }
+
+    .lunch-description {
+        font-size: 12px;
+    }
+
+    .lunch-price {
+        font-size: 20px;
+    }
+
+    .lunch-details {
+        padding-top: 10px;
+    }
+
+    .banner_progress {
+        bottom: 10px;
+        height: 30px;
+    }
+
+    #visual .progress_character {
+        width: 24px;
+        height: 24px;
+    }
+
+    .visual_text {
+        left: 15px;
+        bottom: 25px;
+    }
+
+    .visual_text p {
+        font-size: 10px;
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ==================== 10. 동작 줄이기 설정 ==================== */
+@media (prefers-reduced-motion:reduce) {
+
+    .menu-highlight,
+    .lunch-image {
+        transition: none;
+    }
+}
+
+#home_footer {
+    margin-top: 100px;
+    padding: 35px 50px 40px;
+    background: #805339;
+    color: #ede1cc;
+    text-align: center;
+}
+
+.home_footer_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: auto auto 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebe6df44;
+}
+
+.footer_logo {
+    display: block;
+    width: 130px;
+}
+
+.footer_social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer_social img {
+    width: 55px;
+    height: 45px;
+    object-fit: contain;
+}
+
+#home_footer p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#home_footer small {
+    font-size: 10px;
+    opacity: .65;
+}
+
+@media(max-width:1250px) {
+    .event_inner {
+        gap: 45px;
+    }
+
+    .specialty_layout {
+        gap: 35px;
+    }
+
+    .specialty_list a {
+        gap: 15px;
+    }
+
+    .specialty_list h3 {
+        font-size: 16px;
+    }
+
+    .specialty_photo strong {
+        font-size: 24px;
+    }
+
+    #brand_promises span {
+        font-size: 19px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    #event [data-aos].reveal_ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .specialty_list img,
+    #brand_promises a {
+        transition: none;
+    }
+}

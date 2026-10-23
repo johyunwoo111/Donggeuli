@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>동고리</title>
+
+    <!-- 웹 폰트 연결 -->
+    <!-- font-family: "Noto Sans KR", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- 헤더 -->
+        <div id="header">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_2.png" alt="동고리로고">
+                </a>
+            </h1>
+
+            <ul class="util">
+                <li><a href="#"><img src="./images/Icon_1.png" alt="로그인"></a></li>
+                <li><a href="#"><img src="./images/Icon_2.png" alt="장바구니"></a></li>
+            </ul>
+
+        </div>
+        <!-- 헤더 -->
+
+        <!-- nav -->
+        <div id="nav">
+            <ul class="gnb">
+                <li><a href="#">메뉴</a></li>
+                <li><a href="index2.html">내 마음대로 동고리</a></li>
+                <li><a href="index3.html">회사 소개</a></li>
+                <li><a href="#">정기 주문</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+
+            <div class="search_bar">
+                <!-- 검색 결과 페이지를 만들면 action 주소를 변경 -->
+                <form class="popular_search" action="search.html" method="get">
+
+                    <!-- 평소에 보이는 인기 메뉴 -->
+                    <button type="button" class="popular_open" aria-label="메뉴 검색하기">
+                        <span class="chart_label">인기차트</span>
+
+                        <!-- 한 줄만 보이는 영역 -->
+                        <span class="popular_window">
+                            <span class="popular_list">
+                                <span class="popular_item">
+                                    <span class="rank">NEW</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">1</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">2</span> 찰옥수수 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">3</span> 수육 동고리
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <input type="search" class="search_input" name="keyword" placeholder="찾으시는 도시락은?"
+                        aria-label="도시락 검색어" autocomplete="off" disabled hidden>
+
+                    <button type="submit" class="search_submit" aria-label="검색"></button>
+                </form>
+            </div>
+        </div>
+        <!-- nav -->
+
+    </div>
+
+    <!-- visual -->
+    <div id="visual">
+
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/Banner_1.png" alt="건물외관 주소">
+
+                    <div class="visual_text">
+                        <p>찾아오시는 길 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="./images/Banner_2.png" alt="찰옥수수 동고리"></div>
+                <div class="swiper-slide"><img src="./images/Weekly Meal Plan.png" alt="주간 식단"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 하단 진행 바 -->
+            <div class="banner_progress" aria-hidden="true">
+                <div class="progress_track">
+                    <div class="progress_fill"></div>
+
+                    <!-- 바 위에서 이동하는 동글이 -->
+                    <img class="progress_character" src="./images/Donggeuli_7.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- visual -->
+
+    <!-- 첫번째 콘텐츠 -->
+    <div id="menu_section">
+
+        <div class="inner_menu">
+            <h2 class="menu_title">🏆 으뜸 동고리 3</h2>
+
+            <!-- 아이콘은 장식용이므로 alt를 비워 버튼 이름의 중복 읽기를 방지 -->
+            <ul class="menu_tabs" aria-label="추천 메뉴 카테고리">
+                <li class="on">
+                    <button type="button" aria-pressed="true">
+                        <img class="menu_tab_icon" src="./images/Basket.gif" alt="">
+                        <span>전체</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" aria-pressed="false">
+                        <img class="menu_tab_icon" src="./images/Leaf.gif" alt="">
+                        <span>특산물</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" aria-pressed="false">
+                        <img class="menu_tab_icon menu_tab_icon_bowl" src="./images/Rice Bowl.gif" alt="">
+                        <span class="menu_tab_label">동고리<br>한상</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" aria-pressed="false">
+                        <img class="menu_tab_icon menu_tab_icon_dish" src="./images/Side Dish.png" alt="">
+                        <span>메인메뉴</span>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="menu_stage">
+                <button type="button" class="menu_arrow menu_prev" aria-label="이전 카테고리">
+                    <img src="./images/Spoon_3.gif" alt="">
+                </button>
+
+                <div class="menu_panels">
+
+                    <!-- 1. 전체 -->
+                    <div class="menu_panel" data-name="전체">
+                        <ul class="menu_cards">
+
+                            <!-- 메인 이미지1 -->
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="./images/Lunch Box_2.png" alt="제육동고리">
+                                    <span class="menu_name"><span class="new">HOT</span>제육동고리</span>
+                                    <span class="menu_summary">매콤한 제육과 정성을 담은 따뜻한 동고리</span>
+
+                                    <!-- 설명 글 -->
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>제육 동고리</strong>
+                                        <span class="menu_detail_text">
+                                            돼지고기(제육볶음) - 국내산<br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            채소류 - 국내산 <br>
+                                            <span class="Sauce">(고추장, 고춧가루, 진간장, 설탕, 올리고당, 마늘, 후추, 맛술...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다.</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+
+                                    <img class="menu_image" src="./images/Lunch Box_1.png" alt="수육">
+
+                                    <span class="menu_name"><span class="new">HOT</span>수육동고리</span>
+                                    <span class="menu_summary">야들하고 고소한 입에서 녺는 동고리</span>
+
+                                    <!-- 설명 글 -->
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>수육 동고리</strong>
+                                        <span class="menu_detail_text">
+                                            돼지고기(제육볶음) - 국내산<br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                            <span class="Sauce">(대파, 생강, 된장, 통후추, 청주, 커피, 마늘, 월계수잎...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+
+                                    <img class="menu_image" src="./images/Lunch Box_3.png" alt="돈까스 동고리">
+
+                                    <span class="menu_name"><span class="new">HOT</span>돈까스 동고리</span>
+                                    <span class="menu_summary">
+                                        바삭한 하고 고소한 돈까스 동고리
+                                    </span>
+
+                                    <!-- 설명 글 -->
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>돈까스 동고리</strong>
+                                        <span class="menu_detail_text">
+                                            돼지고기 - 국내산 <br>
+                                            새우 - 칠레 <br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. 특산물 -->
+                    <div class="menu_panel" data-name="특산물" hidden>
+                        <ul class="menu_cards">
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="./images/Corn Lunch Box_1.png" alt="찰옥수수 함바 세트">
+                                    <span class="menu_name">찰옥수수 함박 세트</span>
+                                    <span class="menu_summary">
+                                        제철 옥수수와 함박스테이크의 만남
+                                    </span>
+
+                                    <!-- 설명 -->
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>찰옥수수 함박 세트</strong>
+                                        <span class="menu_detail_text">
+                                            찰옥수수 - 강원도 홍천 <br>
+                                            소고기, 돼지고기 - 국내산 <br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                            <span class="Sauce">(양파, 마늘, 소금, 버터, 후추, 케챱, 시판소스...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Corn Lunch Box_5.png" alt="찰옥수수 닭갈비 세트">
+                                    <span class="menu_name">찰옥수수 닭갈비 세트</span>
+                                    <span class="menu_summary">
+                                        달콤한 옥수수와 매콤한 닭갈비
+                                    </span>
+
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>찰옥수수 닭갈비 세트</strong>
+                                        <span class="menu_detail_text">
+                                            찰옥수수 - 강원도 홍천 <br>
+                                            닭 - 국내산 <br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                            <span class="Sauce">(고추장, 고춧가루, 간장, 설탕, 물엿, 춘장...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Corn Lunch Box_3.png" alt="찰옥수수 샌드위치">
+                                    <span class="menu_name">찰옥수수 샌드위치</span>
+                                    <span class="menu_summary">
+                                        찰옥수수가 들어간 에그감자샐러드의 조합
+                                    </span>
+
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>찰옥수수 샌드위치</strong>
+                                        <span class="menu_detail_text">
+                                            찰옥수수 - 강원도 홍천 <br>
+                                            계란 - 국내산 <br>
+                                            감자 - 국내산 <br>
+                                            양배추 - 국내산 <br>
+                                            <span class="Sauce">알르레기 표시 <br>
+                                                (대두, 밀, 우유, 달걀, 돼지고기, 쇠고기, 조개류(굴), 닭고기 함유)
+                                            </span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span></button>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <!-- 3. 한상 동고리 -->
+                    <div class="menu_panel" data-name="한상 동고리" hidden>
+
+                        <ul class="menu_cards">
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Lunch Box_2.png" alt="제육 동고리">
+                                    <span class="menu_name">제육 동고리</span>
+                                    <span class="menu_summary">
+                                        매콤 달콤한 제육을 듬뿍얻은 제육 동고리
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>제육 한상</strong>
+                                        <span class="menu_detail_text">
+                                            돼지고기 - 국내산<br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            채소류 - 국내산 <br>
+                                            <span class="Sauce">(고추장, 고춧가루, 진간장, 설탕, 올리고당, 마늘, 후추, 맛술...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Lunch Box_4.png" alt="고등어 동고리">
+                                    <span class="menu_name">고등어 동고리</span>
+                                    <span class="menu_summary">
+                                        노릇하게 구워 고소한 고등어 동고리
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>고등어 동고리</strong>
+                                        <span class="menu_detail_text">
+                                            고등어 - 노르웨이
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Lunch Box_5.png" alt="함바스테이크 동고리">
+                                    <span class="menu_name">함바스테이크 동고리</span>
+                                    <span class="menu_summary">
+                                        손수다져 부드러운 함바스테이크 동고리
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>함바스테이크 동고리</strong>
+                                        <span class="menu_detail_text">
+                                            소고기, 돼지고기 - 국내산 <br>
+                                            쌀 - 국내산 <br>
+                                            배추김치 - 국내산 <br>
+                                            고추가루 - 중국산 <br>
+                                            계란 -국내산 <br>
+                                            각종 채소류 - 국내산 <br>
+                                            <span class="Sauce">(양파, 마늘, 소금, 버터, 후추, 케챱, 시판소스...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 메인 메뉴 -->
+                    <div class="menu_panel" data-name="메인메뉴" hidden>
+                        <ul class="menu_cards">
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Side Dish_2.png" alt="제육볶음">
+                                    <span class="menu_name">제육볶음</span>
+                                    <span class="menu_summary">
+                                        저녁식사 식탁에 올라왓더 그맛그대로
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>제육볶음</strong>
+                                        <span class="menu_detail_text">
+                                            돼지고기 - 국내산<br>
+                                            고추가루 - 중국산 <br>
+                                            양파 - 국내산 <br>
+                                            대파 - 국내산 <br>
+                                            고추장 - 국내산
+                                            <span class="Sauce">(고추장, 고춧가루, 진간장, 설탕, 올리고당, 마늘, 후추, 맛술...)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Side Dish_3.png" alt="강된장">
+                                    <span class="menu_name">강된장</span>
+                                    <span class="menu_summary">
+                                        쌈 채소와 어울리는 구수한 맛
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>강된장</strong>
+                                        <span class="menu_detail_text">
+                                            된장 - 국내산 <br>
+                                            두부 - 국내산 <br>
+                                            버섯 - 국내산 <br>
+                                            호박 - 국내산 <br>
+                                            양파 - 국내산 <br>
+                                            대파 - 국내산 <br>
+                                            <span class="Sauce">(된장, 고추장, 고춧가루, 들기름,마늘)</span>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="menu_card" aria-expanded="false">
+                                    <img class="menu_image" src="images/Side Dish_1.png" alt="고등어구이">
+                                    <span class="menu_name">고등어구이</span>
+                                    <span class="menu_summary">
+                                        노릇하게 구워 고소한 생선 반찬
+                                    </span>
+                                    <span class="menu_detail" aria-hidden="true">
+                                        <strong>고등어구이</strong>
+                                        <span class="menu_detail_text">
+                                            고등어 - 노르웨이<br>
+                                        </span>
+                                        <small>다시 클릭하면 닫힙니다</small>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="menu_arrow menu_next" aria-label="다음 카테고리">
+                        <img src="./images/Chopsticks_3.gif" alt="">
+                    </button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="menu_dots">
+            <button type="button" class="on" aria-label="전체" aria-current="true"></button>
+            <button type="button" aria-label="특산물"></button>
+            <button type="button" aria-label="한상 동고리"></button>
+            <button type="button" aria-label="메인반찬"></button>
+        </div>
+
+    </div>
+
+    <!-- 두번째 컨텐츠 -->
+    <div id="donggori_rotate">
+
+        <div class="rotate_info">
+
+            <!-- 도시락 설명 -->
+            <div class="rotate_description">
+                <h2>제육 동고리</h2>
+                <p class="rotate_intro">
+                    매콤한 제육의 한상
+                </p>
+
+                <p class="rotate_composition">
+                    밥, 계란후라이, 제육볶음, 계란말이, 콩자반, 양배추샐러드 가 알차게 들어간 푸짐한 한끼의 동고리
+                </p>
+
+                <a href="#" class="rotate_order">주문하기</a>
+                <!-- 백그라운드로 동글이 이미지 넣기 -->
+            </div>
+
+            <div class="rotate_description" hidden>
+                <h2>수육 동고리</h2>
+                <p class="rotate_intro">
+                    야들고소한 돼지수육의 한상
+                </p>
+
+                <p class="rotate_composition">
+                    콩밥, 돼지수육, 상추, 꺳잎, 마늘, 고추, 쌈장, 김치, 새우젓이 들어간 푸짐한 한끼의 동고리
+                </p>
+
+                <a href="#" class="rotate_order">주문하기</a>
+                <!-- 백그라운드로 동글이 이미지 넣기 -->
+            </div>
+
+            <div class="rotate_description" hidden>
+                <h2>돈까스 동고리</h2>
+                <p class="rotate_intro">
+                    바삭한 돈까스와 새우튀김이 함께하는 동고리
+                </p>
+
+                <p class="rotate_composition">
+                    돈까스, 새우튀김, 생선튀김, 타르타르소스, 김치, 샐러드가 들어간 푸짐한 한끼의 동고리
+                </p>
+
+                <a href="#" class="rotate_order">주문하기</a>
+                <!-- 백그라운드로 동글이 이미지 넣기 -->
+            </div>
+
+            <div class="rotate_description" hidden>
+                <h2>함바스테이크
+                    <br> 동고리
+                </h2>
+                <p class="rotate_intro">
+                    직접다져 부드러운 함바스테이크 동고리
+                </p>
+
+                <p class="rotate_composition">
+                    함바스테이크, 새우튀김, 타르타르소스, 김치, 감자샐러드, 멸치볶음이 들어간 푸짐한 한끼의 동고리
+                </p>
+
+                <a href="#" class="rotate_order">주문하기</a>
+                <!-- 백그라운드로 동글이 이미지 넣기 -->
+            </div>
+
+            <div class="rotate_description" hidden>
+                <h2>찰옥수수 함박
+                    <br> 동고리
+                </h2>
+                <p class="rotate_intro">
+                    직접다져 부드러운 함바스테이크에 찰옥수수가 들어간 동고리
+                </p>
+
+                <p class="rotate_composition">
+                    찰옥수수 함바스테이크, 찰옥수수 고로케, 타르타르소스, 김치, 계란말이, 찰옥수수 감자샐러드가 들어간 푸짐한 한끼의 동고리
+                </p>
+
+                <a href="#" class="rotate_order">주문하기</a>
+                <!-- 백그라운드로 동글이 이미지 넣기 -->
+            </div>
+
+        </div>
+
+        <div class="rotate_wheel">
+
+            <div class="rotate_center">
+                <p class="rotate_text1">
+                    많이 즐겨 <br>
+                    찾는 동고리
+                </p>
+            </div>
+
+            <div class="rotate_items">
+
+                <button type="button" class="rotate_item" aria-label="제육 동고리 선택" aria-pressed="true">
+                    <img src="./images/Lunch Box_2.png" alt="제육동고리">
+                </button>
+
+                <button type="button" class="rotate_item" aria-label="수육 동고리 선택" aria-pressed="false">
+                    <img src="./images/Lunch Box_1.png" alt="수육 동고리">
+                </button>
+
+                <button type="button" class="rotate_item" aria-label="수육 동고리 선택" aria-pressed="false">
+                    <img src="./images/Lunch Box_3.png" alt="돈까스 동고리">
+                </button>
+
+                <button type="button" class="rotate_item" aria-label="수육 동고리 선택" aria-pressed="false">
+                    <img src="./images/Lunch Box_5.png" alt="함박스테이크 동고리">
+                </button>
+
+                <button type="button" class="rotate_item" aria-label="수육 동고리 선택" aria-pressed="false">
+                    <img src="./images/Corn Lunch Box_1.png" alt="찰옥수수 함박 동고리">
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 세 번째 콘텐츠: 이벤트 / href="#"를 실제 주소로 변경하세요. -->
+    <section id="event" class="home_addition" aria-labelledby="event_title">
+        <div class="event_inner">
+            <a class="event_img" href="#" data-aos="fade-right" aria-label="찰옥수수 이벤트 자세히 보기">
+                <img src="./images/Local Specialty Poster.png" alt="찰옥수수, 동고리에 담다 — 찰옥수수 도시락 이벤트" loading="lazy">
+            </a>
+            <div class="event_text" data-aos="fade-left">
+                <p class="home_eyebrow">홍천의 여름을 담다</p>
+                <h2 id="event_title">이달의 특산물<br>제철 찰옥수수!<br>쫀득한 찰기와 톡튀는 알맹이!!<br>그 매력을 느껴보세요!</h2>
+                <p class="event_description">2026.09.01 ~ 2026.10.01</p>
+                <a class="home_brown_link" href="#">자세히 보기</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 네 번째 콘텐츠: 사진 고정 / 오른쪽 목록만 최대 900px 안에서 스크롤 -->
+    <section id="local_specialty" class="home_addition" aria-labelledby="specialty_title">
+        <header class="home_section_heading">
+            <p class="home_eyebrow">우리 땅에서 자란 맛있는 이야기</p>
+            <h2 id="specialty_title">특산물 동고리</h2>
+        </header>
+        <div class="specialty_layout">
+            <figure class="specialty_photo">
+                <img src="./images/Corn.png" alt="옥수수밭에서 수확한 옥수수를 소개하는 농가의 모습" loading="lazy">
+                <figcaption><strong>정성껏 키운 재료,<br>동고리에 담은 한 끼.</strong>
+                    <p>우리 지역의 좋은 재료로<br>매일의 식탁을 조금 더 특별하게.</p>
+                </figcaption>
+            </figure>
+            <div class="specialty_menu_area">
+
+                <div class="specialty_scroll" tabindex="0" role="region" aria-label="특산물 도시락 목록 — 스크롤하여 다섯 가지 메뉴 보기">
+                    <ul class="specialty_list">
+                        <li><a href="#"><img src="./images/Corn Lunch Box_1.png" alt="찰옥수수 함박스테이크 세트" loading="lazy">
+                                <div><span class="specialty_number"></span>
+                                    <h3>찰옥수수 함박스테이크 세트</h3>
+                                    <p>고소한 찰옥수수밥과<br>부드러운 함박스테이크의 만남.</p><span class="specialty_more">메뉴 보기 </span>
+                                </div>
+                            </a></li>
+                        <li><a href="#"><img src="./images/Corn Lunch Box_2.png" alt="찰옥수수 제육 세트" loading="lazy">
+                                <div><span class="specialty_number"></span>
+                                    <h3>찰옥수수 제육 세트</h3>
+                                    <p>달콤한 찰옥수수와<br>매콤한 제육볶음의 든든한 조합.</p><span class="specialty_more">메뉴 보기 </span>
+                                </div>
+                            </a></li>
+                        <li><a href="#"><img src="./images/Corn Lunch Box_5.png" alt="찰옥수수 닭갈비 세트" loading="lazy">
+                                <div><span class="specialty_number"></span>
+                                    <h3>찰옥수수 닭갈비 세트</h3>
+                                    <p>찰옥수수의 고소함에<br>매콤한 닭갈비를 더한 한 상.</p><span class="specialty_more">메뉴 보기 </span>
+                                </div>
+                            </a></li>
+                        <li><a href="#"><img src="./images/Corn Lunch Box_3.png" alt="찰옥수수 샌드위치" loading="lazy">
+                                <div><span class="specialty_number"></span>
+                                    <h3>찰옥수수 샌드위치</h3>
+                                    <p>톡톡 터지는 옥수수를<br>부드러운 샌드위치 안에 가득.</p><span class="specialty_more">메뉴 보기 </span>
+                                </div>
+                            </a></li>
+                        <li><a href="#"><img src="./images/Corn Lunch Box_4.png" alt="찰옥수수 닭가슴살 샐러드" loading="lazy">
+                                <div><span class="specialty_number"></span>
+                                    <h3>찰옥수수 닭가슴살 샐러드</h3>
+                                    <p>싱그러운 채소와 찰옥수수,<br>담백한 닭가슴살로 가볍게.</p><span class="specialty_more">메뉴 보기 </span>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 다섯 번째 콘텐츠: 일정 속도 무한 이동 / 가운데 확대 / 드래그 -->
+    <section id="lunch_conveyor" class="home_addition" aria-label="동고리 도시락 둘러보기">
+        <div class="continuous_flow lunch_flow" data-speed="55" data-enlarge="true" aria-label="좌우로 드래그할 수 있는 도시락 목록">
+            <div class="flow_track">
+                <a class="flow_item" href="#"><img src="./images/Lunch Box_2.png" alt="제육 동고리 메뉴 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Lunch Box_1.png" alt="수육 동고리 메뉴 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Lunch Box_3.png" alt="돈까스 동고리 메뉴 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Lunch Box_4.png" alt="고등어 동고리 메뉴 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Lunch Box_5.png" alt="함박스테이크 동고리 메뉴 보기"
+                        draggable="false"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 리뷰: 화면 전체 너비 사용 / 리뷰 이미지 자체가 링크 -->
+    <section id="home_reviews" class="home_addition" aria-labelledby="review_title">
+        <header class="home_section_heading">
+            <h2 id="review_title">으뜸리뷰🥹</h2>
+            <p>사람들이 전하는 동고리 이야기</p>
+        </header>
+
+        <div class="continuous_flow review_flow" data-speed="36" aria-label="좌우로 드래그할 수 있는 리뷰 목록">
+            <div class="flow_track">
+                <a class="flow_item" href="#"><img src="./images/Group 22.png" alt="긴동글 님의 제육 동고리 리뷰 자세히 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Group 23.png" alt="밥도둑 님의 수육 동고리 리뷰 자세히 보기"
+                        draggable="false"></a>
+                <a class="flow_item" href="#"><img src="./images/Group 24.png" alt="에벌레 님의 찰옥수수 동고리 리뷰 자세히 보기"
+                        draggable="false"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단 다섯 가지 약속: 각각 독립적인 링크와 hover 배경 -->
+    <section id="brand_promises" class="home_addition" aria-label="동고리의 다섯 가지 약속">
+        <a href="#"><img src="./images/Group 26.png" alt=""><span>깐깐한 위생환경</span></a>
+        <a href="#"><img src="./images/Group 25.png" alt=""><span>당일 재료 준비<br>당일 요리 원칙</span></a>
+        <a href="#"><img src="./images/Group 27.png" alt=""><span>다양한<br>메뉴 구성</span></a>
+        <a href="#"><img src="./images/Group 28.png" alt=""><span>위생적<br>안심 포장</span></a>
+        <a href="#"><img src="./images/Group 29.png" alt=""><span>빠른 배송</span></a>
+    </section>
+
+
+
+    <!-- footer -->
+
+    <footer id="home_footer" class="home_addition">
+        <div class="home_footer_inner"><a href="#" aria-label="동고리 홈"><img class="footer_logo" src="./images/logo3.gif"
+                    alt="동고리"></a>
+            <div class="footer_social">
+                <a href="#" aria-label="카카오톡">
+                    <img src="./images/KakaoTalk.gif" alt="카카오톡">
+                </a>
+
+                <a href="#" aria-label="페이스북">
+                    <img src="./images/Facebook.gif" alt="페이스북">
+                </a>
+
+                <a href="#" aria-label="인스타그램">
+                    <img src="./images/Instagram.gif" alt="인스타">
+                </a>
+
+                <a href="#" aria-label="유튜브">
+                    <img src="./images/YouTube.gif" alt="유튜브">
+                </a>
+            </div>
+        </div>
+        <!-- 실제 사업자 정보와 연락처는 이곳에 입력하세요. -->
+        <p>상세주소 : 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123 <br>
+            이메일 : johyunwoo@naver.com <br>
+            연락처 : 010 - 1234 - 5678 / 사업자 등록번호 111-22-345678</p><small>© DONGGORI. All rights reserved.</small>
+    </footer>
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <!-- jQuery 연결 -->
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
