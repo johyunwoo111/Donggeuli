@@ -304,6 +304,26 @@ body {
     object-position: center;
 }
 
+/* 첫 번째 배너: 위쪽 간판이 보이도록 사진을 아래로 배치 */
+#visual .swiper-slide img[src$="Banner_1.png"] {
+    object-position: center 15%;
+}
+
+/* 두 번째 배너: 배너4 이미지로 교체하고 좌우 여백 없이 채움 */
+#visual .swiper-slide img[src$="Banner_4.png"] {
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 세 번째 배너: 식단표 양쪽 끝까지 보이도록 전체 이미지를 맞춤 */
+#visual .swiper-slide img[src$="Weekly Meal Plan.png"] {
+    box-sizing: border-box;
+    padding: 24px;
+    object-fit: contain;
+    background-color: #fff1d4;
+}
+
 .banner_progress {
     width: 600px;
     max-width: calc(100% - 120px);
@@ -398,6 +418,15 @@ body {
     background-color: #fff;
 }
 
+.new {
+    color: #ed3027;
+    margin: 0 10px;
+}
+
+.net {
+    color: rgb(131, 226, 23);
+    margin: 0 10px;
+}
 .menu_tabs>li {
     position: relative;
     display: flex;
@@ -1521,4 +1550,81 @@ body {
     .specialty_pin .home_eyebrow { margin-bottom: 8px; }
     .specialty_pin .specialty_photo figcaption { padding-top: 12px; }
     .specialty_pin .specialty_photo strong { font-size: 24px; }
+}
+
+/* 화면을 스크롤해도 오른쪽 아래에 붙어 있는 주문 링크 */
+.fixed_order {
+    position: fixed; /* 문서가 아닌 브라우저 화면을 기준으로 고정 */
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000; /* 다른 콘텐츠보다 앞에 표시 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    color: #30251d;
+    text-decoration: none;
+}
+
+.fixed_order img {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* 참고 이미지처럼 동글이 방향을 반전 */
+}
+
+.fixed_order span {
+    display: block;
+    padding: 7px 16px;
+    border: 2px solid #30251d;
+    border-radius: 999px;
+    background: #fffdf7;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    box-shadow: 0 3px 6px #0002;
+}
+
+.fixed_order:hover span {
+    background: #ffebc4;
+}
+
+.fixed_order:focus-visible {
+    outline: 3px solid #805034;
+    outline-offset: 5px;
+    border-radius: 12px;
+}
+/* 첫 번째 콘텐츠: 설명 영역 아래 중앙에 같은 크기로 배치한 주문 링크 */
+#menu_section .menu_cards > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 14px;
+    background-color: #fff;
+}
+
+#menu_section .menu_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: 140px;
+    height: 44px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background-color: #805034;
+    color: #fffdf4;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#menu_section .menu_order:hover {
+    background-color: #593520;
+}
+
+#menu_section .menu_order:focus-visible {
+    outline: 3px solid #805034;
+    outline-offset: 4px;
 }
