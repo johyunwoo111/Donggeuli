@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동고리</title>
+
+    <!-- 웹 폰트 연결 -->
+    <!-- font-family: "Noto Sans KR", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- Swiper 기본 스타일: 슬라이드를 가로로 배치하는 데 필요 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css">
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/sub.css">
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/Favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- 헤더 -->
+        <div id="header">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_2.png" alt="동고리로고">
+                </a>
+            </h1>
+
+            <ul class="util">
+                <li><a href="#"><img src="./images/Icon_1.png" alt="로그인"></a></li>
+                <li><a href="#"><img src="./images/Icon_2.png" alt="장바구니"></a></li>
+            </ul>
+
+        </div>
+        <!-- 헤더 -->
+
+        <!-- nav -->
+        <div id="nav">
+            <ul class="gnb">
+                <li><a href="#">메뉴</a></li>
+                <li><a href="sub.html">내 마음대로 동고리</a></li>
+                <li><a href="#">회사 소개</a></li>
+                <li><a href="#">정기 주문</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+
+            <div class="search_bar">
+                <!-- 검색 결과 페이지를 만들면 action 주소를 변경 -->
+                <form class="popular_search" action="search.html" method="get">
+
+                    <!-- 평소에 보이는 인기 메뉴 -->
+                    <button type="button" class="popular_open" aria-label="메뉴 검색하기">
+                        <span class="chart_label">인기차트</span>
+
+                        <!-- 한 줄만 보이는 영역 -->
+                        <span class="popular_window">
+                            <span class="popular_list">
+                                <span class="popular_item">
+                                    <span class="rank">NEW</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">1</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">2</span> 찰옥수수 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">3</span> 수육 동고리
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <input type="search" class="search_input" name="keyword" placeholder="찾으시는 도시락은?"
+                        aria-label="도시락 검색어" autocomplete="off" disabled hidden>
+
+                    <button type="submit" class="search_submit" aria-label="검색"></button>
+                </form>
+            </div>
+        </div>
+        <!-- nav -->
+
+    </div><!-- #wrap: 헤더 영역 끝 -->
+
+    <!-- visual -->
+    <!-- visual -->
+    <div id="visual">
+
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/Banner_1.png" alt="건물외관 주소">
+
+                    <div class="visual_text">
+                        <p>찾아오시는 길 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="./images/Banner_4.png" alt="찰옥수수 동고리"></div>
+                <div class="swiper-slide"><img src="./images/Weekly Meal Plan.png" alt="주간 식단"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 하단 진행 바 -->
+            <div class="banner_progress" aria-hidden="true">
+                <div class="progress_track">
+                    <div class="progress_fill"></div>
+
+                    <!-- 바 위에서 이동하는 동글이 -->
+                    <img class="progress_character" src="./images/Donggeuli_7.gif" alt="">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- visual -->
+
+    <!-- ==================== 도시락 메뉴 시작 ==================== -->
+    <main id="lunch-menu" class="lunch-menu">
+        <h2 class="sr-only">동고리 도시락 메뉴</h2>
+
+        <!-- 1. 메뉴 선택: 나무 배경 + 함께 이동하는 트레이 / 숟가락 / 젓가락 -->
+        <div class="menu-scroll">
+            <div class="menu-tabs" role="tablist" aria-label="도시락 분류">
+                <div class="menu-highlight" aria-hidden="true">
+                    <img class="menu-spoon" src="images/Spoon.png" alt="">
+                    <img class="menu-tray" src="images/Wooden Tray.png" alt="">
+                    <img class="menu-chopsticks" src="images/Chopsticks.png" alt="">
+                </div>
+                <button id="tab-all" class="menu-tab" type="button" role="tab" aria-selected="true"
+                    aria-controls="menu-panel" data-filter="all">전체메뉴</button>
+                <button id="tab-local" class="menu-tab" type="button" role="tab" aria-selected="false"
+                    aria-controls="menu-panel" tabindex="-1" data-filter="local">특산물 동고리</button>
+                <button id="tab-special" class="menu-tab" type="button" role="tab" aria-selected="false"
+                    aria-controls="menu-panel" tabindex="-1" data-filter="special">특선 동고리</button>
+                <button id="tab-value" class="menu-tab" type="button" role="tab" aria-selected="false"
+                    aria-controls="menu-panel" tabindex="-1" data-filter="value">가성비 동고리</button>
+                <button id="tab-picnic" class="menu-tab" type="button" role="tab" aria-selected="false"
+                    aria-controls="menu-panel" tabindex="-1" data-filter="picnic">소풍 동고리</button>
+                <button id="tab-custom" class="menu-tab" type="button" role="tab" aria-selected="false"
+                    aria-controls="menu-panel" tabindex="-1" data-filter="custom">골라담는 동고리</button>
+            </div>
+        </div>
+
+        <!-- 2. 도시락 목록 (임시 구성)
+                 이미지: img의 src / 이름: h3 / 설명: p / 가격: .lunch-price 수정
+                 분류: data-category="local / special / value / picnic / custom"
+                 여러 분류에 표시하려면 공백으로 구분 (예: "local picnic")
+                 도시락 추가: article 한 덩어리를 복사하면 됩니다. -->
+        <section id="menu-panel" role="tabpanel" aria-labelledby="tab-all" tabindex="0">
+            <div class="lunch-grid">
+                <!-- 도시락 1: 찰옥수수 함바스테이크 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="local">
+                    <img class="lunch-image" src="images/Corn Lunch Box_1.png" alt="찰옥수수 함바스테이크" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">기간한정</span>
+                        <h3>찰옥수수 함바스테이크</h3>
+                        <p class="lunch-description">찰옥수수의 톡톡 튀는 식감과 함바스테이크를 함께 담은 동고리</p>
+                        <p class="lunch-price">9,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 2: 찰옥수수밥 제육볶음 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="local value">
+                    <img class="lunch-image" src="images/Corn Lunch Box_2.png" alt="찰옥수수밥 제육볶음" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">기간한정</span>
+                        <h3>찰옥수수밥 제육볶음</h3>
+                        <p class="lunch-description">찰옥수수밥에 매콤한 제육볶음을 곁들인 든든한 한 끼</p>
+                        <p class="lunch-price">8,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 3: 찰옥수수밥 닭갈비 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="local special">
+                    <img class="lunch-image" src="images/Corn Lunch Box_5.png" alt="찰옥수수밥 닭갈비" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">기간한정</span>
+                        <h3>찰옥수수밥 닭갈비</h3>
+                        <p class="lunch-description">찰옥수수의 단맛과 닭갈비의 매콤함이 어우러진 동고리</p>
+                        <p class="lunch-price">8,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 4: 찰옥수수 소풍 샌드위치 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="local picnic">
+                    <img class="lunch-image" src="images/Corn Lunch Box_3.png" alt="찰옥수수 소풍 샌드위치" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">기간한정</span>
+                        <h3>찰옥수수 소풍 샌드위치</h3>
+                        <p class="lunch-description">가볍게 들고 떠나는 소풍에 어울리는 샌드위치 동고리</p>
+                        <p class="lunch-price">6,500원</p>
+                    </div>
+                </article>
+                <!-- 도시락 5: 찰옥수수 닭가슴살샐러드 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="local picnic">
+                    <img class="lunch-image" src="images/Corn Lunch Box_4.png" alt="찰옥수수 닭가슴살샐러드" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">기간한정</span>
+                        <h3>찰옥수수 닭가슴살샐러드</h3>
+                        <p class="lunch-description">신선한 채소와 찰옥수수를 담은 산뜻한 샐러드</p>
+                        <p class="lunch-price">5,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 6: 수육 동고리 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_1.png" alt="수육 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">특선</span>
+                        <h3>수육 동고리</h3>
+                        <p class="lunch-description">부드러운 수육과 정갈한 반찬을 담은 도시락</p>
+                        <p class="lunch-price">10,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 7: 제육 동고리 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_2.png" alt="제육 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">추천</span>
+                        <h3>제육 동고리</h3>
+                        <p class="lunch-description">매콤한 제육볶음으로 채운 든든한 도시락</p>
+                        <p class="lunch-price">7,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 8: 모둠 동고리 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_3.png" alt="돈까스 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">추천</span>
+                        <h3>돈까스 동고리</h3>
+                        <p class="lunch-description">바삭한 돈까스와 새우튀김이 있는 돈까스 도시락</p>
+                        <p class="lunch-price">9,000원</p>
+                    </div>
+                </article>
+                <!-- 도시락 9: 생선구이 동고리 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_4.png" alt="생선구이 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">추천</span>
+                        <h3>생선구이 동고리</h3>
+                        <p class="lunch-description">노릇한 생선구이와 밥을 함께 담은 도시락</p>
+                        <p class="lunch-price">7,500원</p>
+                    </div>
+                </article>
+                <!-- 도시락 10: 함박 동고리 / 임시 상품 정보 -->
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_5.png" alt="함박 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">추천</span>
+                        <h3>함박 동고리</h3>
+                        <p class="lunch-description">함박스테이크와 바삭한 튀김을 담은 도시락</p>
+                        <p class="lunch-price">8,500원</p>
+                    </div>
+                </article>
+                <!-- 추가 메뉴: 이미지와 파일명 기준의 메뉴명. 실제 상품명과 가격은 h3, .lunch-price에서 수정하세요. -->
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_6.png" alt="오징어볶음 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>오징어볶음 동고리</h3>
+                        <p class="lunch-description">매콤한 오징어볶음과 밥, 반찬을 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_7.png" alt="닭강정 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>닭강정 동고리</h3>
+                        <p class="lunch-description">달콤한 양념 닭강정과 밥을 함께 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_8.png" alt="생선조림 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>생선조림 동고리</h3>
+                        <p class="lunch-description">양념을 곁들인 생선조림과 밥을 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_9.png" alt="떡갈비 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>떡갈비 동고리</h3>
+                        <p class="lunch-description">노릇한 떡갈비와 여러 반찬을 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="picnic">
+                    <img class="lunch-image" src="images/Lunch Box_10.png" alt="유부초밥 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">소풍</span>
+                        <h3>유부초밥 동고리</h3>
+                        <p class="lunch-description">한입씩 즐기기 좋은 유부초밥 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_11.png" alt="소불고기 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>소불고기 동고리</h3>
+                        <p class="lunch-description">소불고기와 달걀 프라이를 곁들인 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_12.png" alt="치킨마요 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>치킨마요 동고리</h3>
+                        <p class="lunch-description">치킨과 달걀에 마요 소스를 곁들인 덮밥 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_13.png" alt="참치마요 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>참치마요 동고리</h3>
+                        <p class="lunch-description">참치와 달걀에 마요 소스를 곁들인 덮밥 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="picnic">
+                    <img class="lunch-image" src="images/Lunch Box_14.png" alt="김밥 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">소풍</span>
+                        <h3>김밥 동고리</h3>
+                        <p class="lunch-description">여러 가지 김밥을 골고루 담은 소풍 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_15.png" alt="장어구이 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>장어구이 동고리</h3>
+                        <p class="lunch-description">윤기 나는 장어구이와 밥을 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_16.png" alt="낙지볶음 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>낙지볶음 동고리</h3>
+                        <p class="lunch-description">매콤한 낙지볶음과 밥을 함께 즐기는 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="value">
+                    <img class="lunch-image" src="images/Lunch Box_17.png" alt="돈까스 덮밥 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>돈까스 덮밥 동고리</h3>
+                        <p class="lunch-description">돈까스와 달걀을 밥 위에 올린 덮밥 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="picnic">
+                    <img class="lunch-image" src="images/Lunch Box_18.png" alt="샌드위치 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">소풍</span>
+                        <h3>샌드위치 동고리</h3>
+                        <p class="lunch-description">샌드위치와 과일을 함께 담은 소풍 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Lunch Box_19.png" alt="모둠튀김 동고리" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>모둠튀김 동고리</h3>
+                        <p class="lunch-description">여러 가지 튀김과 밥을 함께 담은 동고리</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Side Dish_1.png" alt="고등어구이" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>고등어구이</h3>
+                        <p class="lunch-description">노릇하게 구운 고등어를 담은 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Side Dish_2.png" alt="제육볶음" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>제육볶음</h3>
+                        <p class="lunch-description">매콤한 양념에 볶은 돼지고기 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Side Dish_3.png" alt="강된장" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>강된장</h3>
+                        <p class="lunch-description">밥이나 쌈에 곁들이기 좋은 구수한 강된장</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Assorted Fried Foods.png" alt="모둠튀김" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>모둠튀김</h3>
+                        <p class="lunch-description">여러 가지 튀김을 한데 담은 모둠 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Beef Bulgogi.png" alt="소불고기" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>소불고기</h3>
+                        <p class="lunch-description">채소와 함께 즐기는 소불고기 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Braised Chicken.png" alt="찜닭" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>찜닭</h3>
+                        <p class="lunch-description">닭고기와 채소를 함께 담은 찜닭</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Braised Fish.png" alt="생선조림" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>생선조림</h3>
+                        <p class="lunch-description">생선과 무에 양념을 곁들인 조림 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Charcoal-Grilled Short Ribs.png" alt="숯불갈비" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>숯불갈비</h3>
+                        <p class="lunch-description">노릇하게 구워 담은 갈비 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Grilled Eel.png" alt="장어구이" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>장어구이</h3>
+                        <p class="lunch-description">양념을 발라 구운 장어 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="special">
+                    <img class="lunch-image" src="images/Gujeolpan.png" alt="구절판" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">도시락</span>
+                        <h3>구절판</h3>
+                        <p class="lunch-description">다채로운 재료를 나누어 담은 구절판</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Pork Cutlet.png" alt="돈까스" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>돈까스</h3>
+                        <p class="lunch-description">먹기 좋게 썰어 담은 바삭한 돈까스</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Spicy Squid.png" alt="오징어볶음" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>오징어볶음</h3>
+                        <p class="lunch-description">오징어와 채소를 매콤하게 볶은 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Spicy Stir-Fried Octopus.png" alt="낙지볶음" loading="lazy"
+                        width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>낙지볶음</h3>
+                        <p class="lunch-description">낙지와 채소를 양념에 볶은 반찬</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Sweet and Sour Pork.png" alt="탕수육" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>탕수육</h3>
+                        <p class="lunch-description">바삭하게 튀겨 담은 탕수육</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Sweet.png" alt="닭강정" loading="lazy" width="360" height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>닭강정</h3>
+                        <p class="lunch-description">달콤한 양념을 입힌 닭강정</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+                <article class="lunch-card" data-category="custom">
+                    <img class="lunch-image" src="images/Tteokgalbi.png" alt="떡갈비" loading="lazy" width="360"
+                        height="240">
+                    <div class="lunch-details">
+                        <span class="lunch-badge">반찬</span>
+                        <h3>떡갈비</h3>
+                        <p class="lunch-description">노릇하게 구워 담은 떡갈비</p>
+                        <p class="lunch-price">가격 준비중</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <p id="menu-status" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+    <!-- ==================== 도시락 메뉴 끝 ==================== -->
+
+    <!-- ==================== 푸터 ==================== -->
+    <footer id="home_footer" class="home_addition">
+        <div class="home_footer_inner"><a href="#" aria-label="동고리 홈"><img class="footer_logo" src="./images/logo3.gif"
+                    alt="동고리"></a>
+            <div class="footer_social">
+                <a href="#" aria-label="카카오톡">
+                    <img src="./images/KakaoTalk.gif" alt="카카오톡">
+                </a>
+
+                <a href="#" aria-label="페이스북">
+                    <img src="./images/Facebook.gif" alt="페이스북">
+                </a>
+
+                <a href="#" aria-label="인스타그램">
+                    <img src="./images/Instagram.gif" alt="인스타">
+                </a>
+
+                <a href="#" aria-label="유튜브">
+                    <img src="./images/YouTube.gif" alt="유튜브">
+                </a>
+            </div>
+        </div>
+        <!-- 실제 사업자 정보와 연락처는 이곳에 입력하세요. -->
+        <p>상세주소 : 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123 <br>
+            이메일 : johyunwoo@naver.com <br>
+            연락처 : 010 - 1234 - 5678 / 사업자 등록번호 111-22-345678</p><small>© DONGGORI. All rights reserved.</small>
+    </footer>
+
+
+
+
+
+    <!-- 고정 주문 버튼: 아래 href="#"의 #을 원하는 주문 페이지 주소로 바꾸세요. -->
+    <!-- 링크 입력 전에는 이동하지 않고, 주소 입력 후에는 동글이와 주문 버튼 모두 이동합니다. -->
+    <a class="fixed_order" href="#" aria-label="동고리 주문" onclick="if (this.getAttribute('href') === '#') return false;">
+        <img src="./images/Donggeuli_1.gif" alt="동글이">
+        <span>주문</span>
+    </a>
+
+
+
+    <!-- 도시락 주문 팝업: 이름/설명/가격은 클릭한 .lunch-card에서 가져옵니다. -->
+    <dialog id="lunch-order-dialog" aria-labelledby="order-title" aria-describedby="order-description">
+        <div class="order-sheet">
+            <button class="order-close" type="button" aria-label="주문 팝업 닫기">×</button>
+            <div class="order-card">
+                <div class="order-main">
+                    <img class="order-image" src="images/Corn Lunch Box_1.png" alt="">
+                    <div class="order-info">
+                        <span class="order-badge"></span>
+                        <h2 id="order-title"></h2>
+                        <p id="order-description"></p>
+                        <div class="order-purchase">
+                            <div><strong class="order-price"></strong><small>*배달비는 별도.</small></div>
+                            <div class="order-cart-wrap">
+                                <img class="order-mascot" src="images/Donggeuli_1.gif" alt="">
+                                <button class="order-add" type="button"><img src="images/Basket.gif" alt="">소쿠리에
+                                    담기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-sides">
+                    <div class="order-sides-heading">
+                        <h3>반찬 골라먹기 <small>최대 3종류</small></h3><span class="order-count">0 / 3 선택</span>
+                    </div>
+                    <p class="order-side-help">원하는 반찬을 최대 3개 골라주세요.  기간한정 메뉴는 별도의 추가요금이 있습니다.</p>
+                    <div class="order-side-columns">
+                        <fieldset>
+                            <legend>기본 반찬</legend>
+                            <div class="order-options" data-side-group="regular"></div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>기간 한정 반찬</legend>
+                            <div class="order-options" data-side-group="seasonal"></div>
+                        </fieldset>
+                    </div>
+                    <p class="order-feedback" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <!-- jQuery 연결 -->
+    <script src="js/sub.js"></script>
+</body>
+
+</html>
