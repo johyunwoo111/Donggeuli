@@ -4,7 +4,7 @@ $(function () {
     var banner = $("#visual .mySwiper");
 
     // 배너가 있는 경우에만 실행
-    if (banner.length === 0 || typeof Swiper === "undefined") {
+    if (banner.length === 0) {
         return;
     }
 
@@ -13,15 +13,8 @@ $(function () {
 
     var swiper = new Swiper(banner[0], {
         slidesPerView: 1,
-        initialSlide: 1,
         loop: true,
         speed: 800,
-
-        // 배너 안의 이전 / 다음 버튼 연결
-        navigation: {
-            nextEl: banner.find(".swiper-button-next")[0],
-            prevEl: banner.find(".swiper-button-prev")[0]
-        },
 
         // 자동 슬라이드
         autoplay: {
@@ -314,3 +307,152 @@ $(function () {
         });
     });
 })();
+
+// ==================== 도시락 주문 팝업 ====================
+$(function () {
+    var dialog = document.getElementById('lunch-order-dialog');
+    if (!dialog) return;
+    var $dialog = $(dialog);
+    // 저장 안내는 반찬 선택 영역 바깥에 두어 단품 팝업에서도 표시합니다.
+    $dialog.find('.order-feedback').appendTo($dialog.find('.order-card'));
+    var selected = new Set();
+    var currentProduct = null;
+    var opener = null;
+    var closing = false;
+    var closeTimer;
+    var pageY = 0;
+    var savedBodyStyle = null;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var regular = ['김치', '계란말이', '감자볶음', '콩자반', '멸치볶음', '메추리장조림', '미역줄기', '어묵볶음', '연근조림', '애호박볶음', '진미채볶음', '소·야볶음', '무생채', '오이소박이', '콩나물무침', '우엉조림'];
+    var seasonal = ['감자콘샐러드', '콘슬로', '콘과일사라다', '콘치즈', '옥수수전'];
+    var maxSides = 3; // 최대 선택 개수
+    var cartKey = 'donggori-cart-v1';
+
+    function buildOptions(names, group) {
+        names.forEach(function (name) {
+            $('<button>', { type: 'button', class: 'order-option', text: name, 'aria-pressed': 'false' })
+                .attr('data-side', name).appendTo($dialog.find('[data-side-group="' + group + '"]'));
+        });
+    }
+    buildOptions(regular, 'regular');
+    buildOptions(seasonal, 'seasonal');
+    function renderSelection() {
+        $dialog.find('.order-option').each(function () {
+            $(this).attr('aria-pressed', String(selected.has(this.dataset.side)));
+        });
+        $dialog.find('.order-count').text(selected.size + ' / ' + maxSides + ' 선택');
+    }
+    function feedback(message) { $dialog.find('.order-feedback').text(message); }
+    function openOrder(card) {
+        if (dialog.open || card.hidden) return;
+        var $card = $(card);
+        opener = card;
+        // 반찬 배지 또는 custom 분류는 단품 반찬 팝업으로 표시합니다.
+        var isSideDish = $card.find('.lunch-badge').text().trim() === '반찬' ||
+            (card.dataset.category || '').split(/\s+/).includes('custom');
+        currentProduct = {
+            name: $card.find('h3').text().trim(),
+            description: $card.find('.lunch-description').text().trim(),
+            priceText: $card.find('.lunch-price').text().trim(),
+            image: $card.find('.lunch-image').attr('src'),
+            isSideDish: isSideDish
+        };
+        currentProduct.price = Number(currentProduct.priceText.replace(/[^0-9]/g, ''));
+        currentProduct.id = currentProduct.name + '|' + currentProduct.image;
+        // 팝업을 열 때마다 도시락은 김치만 기본 선택합니다.
+        selected = new Set(isSideDish ? [] : ['김치']);
+        $dialog.toggleClass('is-side-dish', isSideDish);
+        $dialog.find('.order-sides').prop('hidden', isSideDish);
+        $dialog.find('.order-image').attr({ src: currentProduct.image, alt: currentProduct.name });
+        $dialog.find('#order-title').text(currentProduct.name);
+        $dialog.find('#order-description').text(currentProduct.description);
+        $dialog.find('.order-price').text(currentProduct.priceText);
+        var badge = $card.find('.lunch-badge').text().trim();
+        $dialog.find('.order-badge').text(badge).prop('hidden', !badge);
+        feedback('');
+        renderSelection();
+        pageY = window.scrollY;
+        savedBodyStyle = document.body.getAttribute('style');
+        var gutter = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.position = 'fixed';
+        document.body.style.top = -pageY + 'px';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+        if (gutter > 0) document.body.style.paddingRight = gutter + 'px';
+        dialog.showModal(); // 배경 클릭/키보드 접근 차단과 포커스 범위를 브라우저가 관리
+        dialog.scrollTop = 0;
+        $dialog.find('.order-close')[0].focus({ preventScroll: true });
+    }
+    function closeOrder() {
+        if (!dialog.open || closing) return;
+        closing = true;
+        dialog.classList.add('is-closing');
+        closeTimer = setTimeout(function () { dialog.close(); }, reduced.matches ? 0 : 220);
+    }
+    dialog.addEventListener('close', function () {
+        clearTimeout(closeTimer);
+        closing = false;
+        dialog.classList.remove('is-closing');
+        if (savedBodyStyle === null) document.body.removeAttribute('style');
+        else document.body.setAttribute('style', savedBodyStyle);
+        window.scrollTo({ top: pageY, behavior: 'instant' });
+        if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+    });
+    dialog.addEventListener('cancel', function (event) { event.preventDefault(); closeOrder(); });
+    var downOnBackdrop = false;
+    function outside(event) {
+        var rect = dialog.getBoundingClientRect();
+        return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    }
+    dialog.addEventListener('pointerdown', function (event) { downOnBackdrop = event.target === dialog && outside(event); });
+    dialog.addEventListener('click', function (event) {
+        if (downOnBackdrop && event.target === dialog && outside(event)) closeOrder();
+        downOnBackdrop = false;
+    });
+    $dialog.find('.order-close').on('click', closeOrder);
+    $('.lunch-card').each(function () {
+        $(this).attr({ role: 'button', tabindex: '0', 'aria-haspopup': 'dialog', 'aria-controls': dialog.id, 'aria-label': $(this).find('h3').text().trim() + ' 주문 옵션 열기' });
+    });
+    $('.lunch-grid').on('click', '.lunch-card', function () { openOrder(this); });
+    $('.lunch-grid').on('keydown', '.lunch-card', function (event) {
+        if (event.target !== this) return;
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openOrder(this); }
+    });
+    $dialog.on('click', '.order-option', function () {
+        if (!currentProduct || currentProduct.isSideDish) return;
+        var side = this.dataset.side;
+        if (selected.has(side)) {
+            selected.delete(side);
+            feedback('');
+        } else if (selected.size < maxSides) {
+            selected.add(side);
+            feedback('');
+        } else {
+            feedback('반찬은 최대 3개까지 선택할 수 있어요. 선택한 반찬 하나를 해제한 뒤 골라주세요.');
+        }
+        renderSelection();
+    });
+    $dialog.find('.order-add').on('click', function () {
+        if (!currentProduct || closing) return;
+        // 결제/서버 주문은 하지 않습니다. 현재 브라우저의 소쿠리에 저장합니다.
+        // 실제 주문 페이지 연결은 이 부분에서 구현하면 됩니다.
+        try {
+            var cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+            if (!Array.isArray(cart)) throw new Error('Invalid cart');
+            var sides = currentProduct.isSideDish ? [] : Array.from(selected).sort();
+            var matching = cart.find(function (item) {
+                return item && item.id === currentProduct.id && item.price === currentProduct.price &&
+                    Array.isArray(item.sides) && JSON.stringify(item.sides.slice().sort()) === JSON.stringify(sides);
+            });
+            if (matching) matching.quantity = (Number(matching.quantity) || 1) + 1;
+            else cart.push({
+                id: currentProduct.id, name: currentProduct.name, image: currentProduct.image,
+                price: currentProduct.price, sides: sides, quantity: 1
+            });
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+            feedback(currentProduct.name + ' 1개를 소쿠리에 담았어요. 이 브라우저에 저장되며, 결제·주문 접수는 아직 진행되지 않습니다.');
+        } catch (error) {
+            feedback('소쿠리에 저장하지 못했어요. 브라우저 저장 설정을 확인한 뒤 다시 시도해 주세요.');
+        }
+    });
+});
