@@ -1,0 +1,1030 @@
+@charset "utf-8";
+
+/* 창원단감아삭체 웹폰트 */
+@font-face {
+    font-family: 'ChangwonDanggamAsak';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 경복궁 수문장 제목체 웹폰트 */
+@font-face {
+    font-family: 'GyeongbokgungSumunjangTitle';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-3@1.0/Sumunjang_TitleB.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* 영월체 제목체 웹폰트 */
+@font-face {
+    font-family: 'Yeongwol';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/YeongwolTTF-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    cursor: url("../images/Donggeuli.png") 16 16, auto;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #111;
+    background: url(../images/Background_2.jpg) center;
+}
+
+/* ================================== header ================================== */
+#wrap {
+    min-width: 1200px;
+    height: 90px;
+
+    /* 로고와 아이콘 */
+    position: relative;
+}
+
+#header {
+    width: 1740px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    /* position 자식 */
+    position: relative;
+    z-index: 2;
+    /* 빈 영역이 아래 메뉴 클릭을 막지 않게 설정 */
+    pointer-events: none;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.logo img {
+    display: block;
+    width: 110px;
+    height: auto;
+}
+
+/* 아이콘 */
+.util {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    position: absolute;
+    top: 50%;
+    right: 270px;
+    transform: translateY(-50%);
+}
+
+.util li:first-child img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.util li:last-child img {
+    object-fit: contain;
+}
+
+.logo a,
+.util a {
+    pointer-events: auto;
+}
+
+/* ===== nav ====== */
+#nav {
+    width: 1200px;
+    height: 90px;
+    box-sizing: border-box;
+    padding-right: 160px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 15px;
+
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: all 0.5s;
+}
+
+.gnb>li>a:hover {
+    color: #936b3c;
+}
+
+/* 검색바 */
+.search_bar {
+    flex-shrink: 0;
+}
+
+.popular_search {
+    width: 245px;
+    height: 42px;
+    padding: 0 14px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+/* 인기 메뉴버튼 */
+.popular_open {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.chart_label {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* 메뉴 */
+.popular_window {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    overflow: hidden;
+}
+
+.popular_search .rank {
+    color: #ed3027;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.popular_list {
+    display: block;
+    margin-top: 0;
+}
+
+.popular_item {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.popular_search .search_input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    font-size: 12px;
+}
+
+.search_input::placeholder {
+    color: #888;
+}
+
+.search_submit {
+    flex-shrink: 0;
+    width: 26px;
+    height: 30px;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+    background-image: url(../images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+
+    cursor: pointer;
+}
+
+.popular_search:focus-within {
+    box-shadow: 0 0 0 2px #b39454;
+}
+
+.popular_search [hidden] {
+    display: none !important;
+}
+
+/* PC 헤더의 한 줄 배치를 작은 화면에서도 같은 비율로 유지합니다. */
+@media (max-width: 1740px) {
+    #wrap {
+        min-width: 0;
+        width: 100%;
+        height: 4.6875vw;
+        padding: 0;
+    }
+
+    #header {
+        width: 90.625vw;
+        height: 4.6875vw;
+        margin: 0 auto;
+    }
+
+    #header .logo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #header .logo img {
+        width: 5.729167vw;
+        height: auto;
+    }
+
+    #header .util {
+        position: absolute;
+        top: 50%;
+        right: 14.0625vw;
+        gap: 1.5625vw;
+        transform: translateY(-50%);
+    }
+
+    #header .util li:first-child img {
+        width: 2.083333vw;
+        height: 2.083333vw;
+    }
+
+    #header .util li:last-child img {
+        width: 2.604167vw;
+        height: auto;
+    }
+
+    #nav {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 62.5vw;
+        height: 4.6875vw;
+        padding: 0 8.333333vw 0 0;
+        gap: .78125vw;
+    }
+
+    #nav .gnb {
+        gap: 2.083333vw;
+        flex-shrink: 0;
+    }
+
+    #nav .gnb>li>a {
+        padding: .520833vw .78125vw;
+        font-size: .833333vw;
+        white-space: nowrap;
+    }
+
+    #nav .search_bar {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    #nav .popular_search {
+        width: 12.760417vw;
+        height: 2.1875vw;
+        padding: 0 .729167vw;
+        gap: .416667vw;
+        border-radius: 1.5625vw;
+    }
+
+    #nav .popular_open {
+        gap: .520833vw;
+    }
+
+    #nav .chart_label {
+        font-size: .520833vw;
+    }
+
+    #nav .popular_window,
+    #nav .popular_item {
+        height: 1.25vw;
+    }
+
+    #nav .popular_item {
+        line-height: 1.25vw;
+        font-size: .625vw;
+    }
+
+    #nav .popular_search .rank {
+        margin-right: .3125vw;
+    }
+
+    #nav .popular_search .search_input {
+        font-size: .625vw;
+    }
+
+    #nav .search_submit {
+        width: 1.354167vw;
+        height: 1.5625vw;
+        background-size: 1.041667vw 1.041667vw;
+    }
+}
+
+/* ==================== 회사 소개 ==================== */
+#brand-story {
+    --brand-brown: #59351f;
+    color: #30291e;
+}
+
+#brand-story *,
+#home_footer * {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+#brand-story h1,
+#brand-story h2 {
+    font-family: 'Yeongwol', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    word-break: keep-all;
+}
+
+#brand-story p {
+    word-break: keep-all;
+}
+
+.brand-intro {
+    padding: 105px 24px 85px;
+    text-align: center;
+}
+
+.brand-about {
+    font-family: 'GyeongbokgungSumunjangTitle', sans-serif;
+    font-size: 26px;
+    color: #756f60;
+    margin-bottom: 24px;
+}
+
+#brand-title {
+    font-size: 80px;
+    line-height: 1.32;
+    letter-spacing: -.035em;
+}
+
+.brand-hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: url('../images/Background4.png') center / cover;
+}
+
+/* 왼쪽 절반을 밝게 하는 그라데이션: 색상과 위치는 여기서 조절 */
+.brand-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #eee9d3 0%, rgba(238, 233, 211, .96) 24%, rgba(238, 233, 211, .72) 40%, rgba(238, 233, 211, 0) 61%);
+}
+
+.brand-hero-copy {
+    position: relative;
+    width: min(570px, 48%);
+    margin-left: max(6vw, calc((100vw - 1200px) / 2));
+    padding: 64px 24px 64px 0;
+}
+
+.brand-eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .055em;
+    margin-bottom: 24px;
+}
+
+.brand-hero h2 {
+    font-family: 'Yeongwol', sans-serif;
+    
+    font-size: 60px;
+    line-height: 1.28;
+    margin-bottom: 38px;
+}
+#brand-story .brand-hero h2 {
+    font-family: 'Yeongwol', sans-serif;
+    font-weight: 400;
+}
+
+.brand-hero-copy>p:last-child {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.brand-origin {
+    width: min(1740px, 90%);
+    margin: auto;
+    padding: 170px 0 210px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+    overflow: clip;
+}
+
+.brand-origin-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.brand-origin-copy {
+    text-align: center;
+}
+
+.brand-origin h2 {
+    font-size: 70px;
+    margin-bottom: 50px;
+}
+
+.brand-origin p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.brand-mascot {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.brand-origin .brand-mascot {
+    margin: 30px auto 0;
+}
+
+/* 180vh = 한 화면을 보여준 뒤 80vh만큼 더 스크롤하는 동안 고정 */
+.brand-pin-stage {
+    --brand-top-gap: clamp(40px, 8svh, 90px);
+    position: relative;
+    height: 180vh;
+}
+
+.brand-pin {
+    position: sticky;
+    top: var(--brand-top-gap, 70px);
+    height: calc(100vh - var(--brand-top-gap, 70px));
+    height: calc(100svh - var(--brand-top-gap, 70px));
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    overflow: clip;
+}
+
+.brand-tradition .brand-pin {
+    background-image: url('../images/Background5.png');
+}
+
+.brand-taste .brand-pin {
+    background-image: url('../images/Autumn Jangdokdae.png');
+}
+
+.brand-value-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: end;
+}
+
+.brand-value-copy {
+    position: relative;
+    padding: 60px 40px 110px;
+    text-align: center;
+    min-height: min(54svh, 480px);
+    background: rgba(241, 229, 219, .94);
+}
+
+.brand-value-copy h2 {
+    font-size: 65px;
+    margin-bottom: 44px;
+}
+
+.brand-value-copy>p:last-of-type {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.brand-value-copy .brand-mascot {
+    position: absolute;
+    bottom: 18px;
+    left: 65px;
+    width: 200px;
+    height: 200px;
+}
+
+.brand-value-photo {
+    width: 100%;
+    height: min(68svh, 620px);
+    object-fit: cover;
+    border-radius: 50px;
+    position: relative;
+}
+
+.brand-taste .brand-value-layout {
+    grid-template-columns: 1fr 1.6fr;
+}
+
+.brand-taste .brand-value-copy .brand-mascot {
+    left: auto;
+    right: 60px;
+}
+
+.brand-nature .brand-pin {
+    isolation: isolate;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* cover로 빈틈없이 채운 숲 배경을 추가로 20% 확대합니다. */
+.brand-nature .brand-pin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url('../images/Background6.png') center / cover no-repeat;
+    transform: scale(1.2);
+}
+
+.brand-nature-card {
+    position: relative;
+    width: min(1400px, 90%);
+    padding: 60px 90px;
+    border-radius: 50px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(250, 247, 229, .95), rgba(243, 235, 210, .89));
+}
+
+.brand-nature-card .brand-eyebrow {
+    text-align: right;
+}
+
+.brand-nature-card h2 {
+    font-size: 65px;
+    margin: 44px 0;
+}
+
+.brand-nature-card>p:not(.brand-eyebrow) {
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 26px 0;
+}
+
+.brand-nature-card .brand-mascot {
+    position: absolute;
+    right: 60px;
+    bottom: 40px;
+}
+
+/* 확대 후 약 45vh만큼 더 스크롤하는 동안 고정합니다. */
+.brand-finale {
+    height: 235vh;
+    position: relative;
+}
+
+.brand-finale-sticky {
+    height: 100vh;
+    height: 100svh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.brand-finale-card {
+    position: relative;
+    width: min(600px, calc(100% - 40px));
+    max-width: 1200px;
+    aspect-ratio: 1.3;
+    max-height: 84svh;
+    overflow: hidden;
+}
+
+.brand-finale-card>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-finale-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(27, 20, 13, .65), transparent 75%);
+}
+
+.brand-finale-copy {
+    position: absolute;
+    z-index: 1;
+    bottom: 12%;
+    left: 7%;
+    right: 7%;
+    color: #fff8e8;
+}
+
+.brand-finale-copy h2 {
+    font-size: clamp(26px, 2.6vw, 48px);
+    line-height: 1.45;
+    margin-bottom: 22px;
+}
+
+.brand-finale-copy p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* AOS 속성의 등장 효과. 외부 라이브러리 없이 작동하고 JS를 꺼도 본문을 표시합니다. */
+.brand-motion [data-aos] {
+    opacity: 0;
+    transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1);
+}
+
+.brand-motion [data-aos='fade-right'] {
+    transform: translateX(-65px);
+}
+
+.brand-motion [data-aos='fade-left'] {
+    transform: translateX(65px);
+}
+
+.brand-motion [data-aos='fade-up'] {
+    transform: translateY(70px);
+}
+
+.brand-motion [data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+#home_footer {
+    background: #59351f;
+    color: #eee2d5;
+    padding: 45px 24px 32px;
+    text-align: center;
+}
+
+.home_footer_inner {
+    max-width: 1320px;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ae8d71;
+}
+
+.footer_logo {
+    width: 135px;
+    height: auto;
+}
+
+.footer_social {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer_social img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+#home_footer>p {
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+#home_footer>small {
+    display: block;
+    margin-top: 15px;
+    opacity: .65;
+}
+
+@media (max-width: 900px) {
+    .brand-hero {
+        min-height: 540px;
+    }
+
+    .brand-origin {
+        gap: 30px;
+        padding: 100px 0;
+    }
+
+    .brand-origin p {
+        font-size: 15px;
+    }
+
+    .brand-value-copy {
+        padding: 40px 24px 100px;
+    }
+
+    .brand-value-copy>p:last-of-type {
+        font-size: 15px;
+    }
+
+    .brand-nature-card {
+        width: 100%;
+        padding: 40px 28px 110px;
+    }
+
+    .brand-nature-card .brand-mascot {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 610px) {
+    .brand-intro {
+        padding: 65px 20px;
+    }
+
+    .brand-about {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    #brand-title {
+        font-size: 38px;
+    }
+
+    .brand-hero {
+        min-height: 490px;
+        background-position: 60% center;
+    }
+
+    .brand-hero::before {
+        background: linear-gradient(90deg, rgba(238, 233, 211, .98), rgba(238, 233, 211, .85) 42%, rgba(238, 233, 211, 0) 95%);
+    }
+
+    .brand-hero-copy {
+        margin-left: 6%;
+        width: 78%;
+    }
+
+    .brand-hero h2 {
+        font-size: 34px;
+    }
+
+    .brand-hero-copy>p:last-child {
+        font-size: 15px;
+    }
+
+    .brand-origin {
+        grid-template-columns: 1fr;
+        padding: 70px 0;
+        gap: 36px;
+    }
+
+    .brand-origin h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+    }
+
+    .brand-pin-stage {
+        --brand-top-gap: 30px;
+        height: 160svh;
+    }
+
+    .brand-value-layout,
+    .brand-taste .brand-value-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 20px 20px 0;
+    }
+
+    .brand-value-photo {
+        height: 30svh;
+        border-radius: 50px;
+        order: -1;
+    }
+
+    .brand-value-copy {
+        min-height: 0;
+        padding: 24px 20px 65px;
+        border-radius: 25px;
+    }
+
+    .brand-value-copy h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .brand-eyebrow {
+        font-size: 11px;
+        margin-bottom: 16px;
+    }
+
+    .brand-value-copy>p:last-of-type {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .brand-value-copy .brand-mascot {
+        width: 65px;
+        height: 65px;
+        bottom: 5px;
+    }
+
+    .brand-nature .brand-pin {
+        padding: 20px;
+    }
+
+    .brand-nature-card h2 {
+        font-size: 27px;
+        margin: 24px 0;
+    }
+
+    .brand-nature-card>p:not(.brand-eyebrow) {
+        font-size: 15px;
+    }
+
+    .brand-finale-copy h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .brand-finale-copy p {
+        font-size: 12px;
+    }
+
+    .footer_logo {
+        width: 90px;
+    }
+
+    .footer_social {
+        gap: 12px;
+    }
+
+    .footer_social img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #home_footer>p {
+        font-size: 12px;
+    }
+}
+
+/* 높이가 낮은 화면에서는 본문이 잘리지 않도록 고정을 해제 */
+@media (max-height: 650px),
+(prefers-reduced-motion: reduce) {
+
+    .brand-pin-stage,
+    .brand-finale {
+        height: auto;
+    }
+
+    .brand-pin,
+    .brand-finale-sticky {
+        position: relative;
+        top: 0;
+        height: auto;
+        min-height: 100svh;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .brand-motion [data-aos] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* 설명 화면을 겹쳐 쌓습니다. 이전 화면을 밀어 올리지 않고 다음 화면이 덮습니다. */
+@media (min-height: 651px) and (prefers-reduced-motion: no-preference) {
+    .brand-stack {
+        position: relative;
+        padding-bottom: 35svh;
+    }
+
+    .brand-stack .brand-pin-stage {
+        --stack-top: 0px;
+        position: sticky;
+        top: var(--stack-top);
+        height: calc(100svh - var(--stack-top));
+        margin-bottom: 35svh;
+    }
+
+    .brand-stack .brand-tradition {
+        z-index: 1;
+    }
+
+    .brand-stack .brand-taste {
+        --stack-top: 36px;
+        z-index: 2;
+    }
+
+    .brand-stack .brand-nature {
+        --stack-top: 72px;
+        z-index: 3;
+        margin-bottom: 0;
+    }
+
+    .brand-stack .brand-pin {
+        position: relative;
+        top: 0;
+        height: 100%;
+    }
+}
+
+@media (max-width: 610px) and (min-height: 651px) and (prefers-reduced-motion: no-preference) {
+    .brand-stack .brand-taste {
+        --stack-top: 24px;
+    }
+
+    .brand-stack .brand-nature {
+        --stack-top: 48px;
+    }
+}
+/* 마지막 설명 아래 구분선과 브랜드 문구 */
+.brand-finale-copy .brand-finale-tagline {
+    width: min(100%, 520px);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 248, 232, .65);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+}
