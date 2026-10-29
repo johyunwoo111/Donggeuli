@@ -427,6 +427,7 @@ body {
     color: rgb(131, 226, 23);
     margin: 0 10px;
 }
+
 .menu_tabs>li {
     position: relative;
     display: flex;
@@ -1180,7 +1181,8 @@ body {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
-    scrollbar-width: none; /* 스크롤 동작을 유지하며 스크롤바만 숨김 */
+    scrollbar-width: none;
+    /* 스크롤 동작을 유지하며 스크롤바만 숨김 */
 
     padding-right: 22px;
 }
@@ -1491,6 +1493,7 @@ body {
         transition: none;
     }
 }
+
 /* Chrome, Safari 등에서도 특산물 목록의 스크롤바 숨김 */
 .specialty_scroll::-webkit-scrollbar {
     display: none;
@@ -1502,6 +1505,7 @@ body {
     margin-top: 90px;
     margin-bottom: 160px;
 }
+
 .specialty_pin {
     position: sticky;
     top: 0;
@@ -1512,29 +1516,35 @@ body {
     display: flex;
     flex-direction: column;
 }
-.specialty_pin > .home_section_heading {
+
+.specialty_pin>.home_section_heading {
     flex: 0 0 auto;
     margin-bottom: 28px;
 }
+
 .specialty_pin .specialty_layout {
     flex: 1;
     min-height: 0;
     height: auto;
     max-height: 900px;
 }
+
 .specialty_pin .specialty_scroll {
-    overflow: hidden; /* 휠과 터치 스크롤은 페이지가 받고 JS가 목록 위치에 반영 */
+    overflow: hidden;
+    /* 휠과 터치 스크롤은 페이지가 받고 JS가 목록 위치에 반영 */
     scroll-behavior: auto;
     overflow-anchor: none;
     scrollbar-width: none;
 }
+
 .specialty_pin .specialty_photo {
     height: 100%;
     min-height: 0;
     display: flex;
     flex-direction: column;
 }
-.specialty_pin .specialty_photo > img {
+
+.specialty_pin .specialty_photo>img {
     flex: 1;
     min-height: 0;
     height: 0;
@@ -1542,22 +1552,45 @@ body {
     object-fit: contain;
     object-position: left top;
 }
-.specialty_pin .specialty_photo figcaption { flex: 0 0 auto; }
+
+.specialty_pin .specialty_photo figcaption {
+    flex: 0 0 auto;
+}
+
 @media (max-height: 750px) {
-    .specialty_pin { padding: 16px 0; }
-    .specialty_pin > .home_section_heading { margin-bottom: 16px; }
-    .specialty_pin .home_section_heading h2 { font-size: 36px; }
-    .specialty_pin .home_eyebrow { margin-bottom: 8px; }
-    .specialty_pin .specialty_photo figcaption { padding-top: 12px; }
-    .specialty_pin .specialty_photo strong { font-size: 24px; }
+    .specialty_pin {
+        padding: 16px 0;
+    }
+
+    .specialty_pin>.home_section_heading {
+        margin-bottom: 16px;
+    }
+
+    .specialty_pin .home_section_heading h2 {
+        font-size: 36px;
+    }
+
+    .specialty_pin .home_eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .specialty_pin .specialty_photo figcaption {
+        padding-top: 12px;
+    }
+
+    .specialty_pin .specialty_photo strong {
+        font-size: 24px;
+    }
 }
 
 /* 화면을 스크롤해도 오른쪽 아래에 붙어 있는 주문 링크 */
 .fixed_order {
-    position: fixed; /* 문서가 아닌 브라우저 화면을 기준으로 고정 */
+    position: fixed;
+    /* 문서가 아닌 브라우저 화면을 기준으로 고정 */
     right: 24px;
     bottom: 24px;
-    z-index: 1000; /* 다른 콘텐츠보다 앞에 표시 */
+    z-index: 1000;
+    /* 다른 콘텐츠보다 앞에 표시 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1569,7 +1602,8 @@ body {
 .fixed_order img {
     width: 100%;
     height: auto;
-    transform: scaleX(-1); /* 참고 이미지처럼 동글이 방향을 반전 */
+    transform: scaleX(-1);
+    /* 참고 이미지처럼 동글이 방향을 반전 */
 }
 
 .fixed_order span {
@@ -1593,8 +1627,9 @@ body {
     outline-offset: 5px;
     border-radius: 12px;
 }
+
 /* 첫 번째 콘텐츠: 설명 영역 아래 중앙에 같은 크기로 배치한 주문 링크 */
-#menu_section .menu_cards > li {
+#menu_section .menu_cards>li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1627,4 +1662,27 @@ body {
 #menu_section .menu_order:focus-visible {
     outline: 3px solid #805034;
     outline-offset: 4px;
+}
+
+/* PC 헤더의 한 줄 배치를 작은 화면에서도 같은 비율로 유지합니다. */
+@media (max-width: 1740px) {
+    #wrap { min-width: 0; width: 100%; height: 4.6875vw; padding: 0; }
+    #header { width: 90.625vw; height: 4.6875vw; margin: 0 auto; }
+    #header .logo { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+    #header .logo img { width: 5.729167vw; height: auto; }
+    #header .util { position: absolute; top: 50%; right: 14.0625vw; gap: 1.5625vw; transform: translateY(-50%); }
+    #header .util li:first-child img { width: 2.083333vw; height: 2.083333vw; }
+    #header .util li:last-child img { width: 2.604167vw; height: auto; }
+    #nav { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 62.5vw; height: 4.6875vw; padding: 0 8.333333vw 0 0; gap: .78125vw; }
+    #nav .gnb { gap: 2.083333vw; flex-shrink: 0; }
+    #nav .gnb > li > a { padding: .520833vw .78125vw; font-size: .833333vw; white-space: nowrap; }
+    #nav .search_bar { display: block; flex-shrink: 0; }
+    #nav .popular_search { width: 12.760417vw; height: 2.1875vw; padding: 0 .729167vw; gap: .416667vw; border-radius: 1.5625vw; }
+    #nav .popular_open { gap: .520833vw; }
+    #nav .chart_label { font-size: .520833vw; }
+    #nav .popular_window, #nav .popular_item { height: 1.25vw; }
+    #nav .popular_item { line-height: 1.25vw; font-size: .625vw; }
+    #nav .popular_search .rank { margin-right: .3125vw; }
+    #nav .popular_search .search_input { font-size: .625vw; }
+    #nav .search_submit { width: 1.354167vw; height: 1.5625vw; background-size: 1.041667vw 1.041667vw; }
 }
