@@ -383,6 +383,21 @@ $(function () {
         dialog.scrollTop = 0;
         $dialog.find('.order-close')[0].focus({ preventScroll: true });
     }
+    // sub.html?product=상품ID 링크로 이동하면 해당 카드의 기존 팝업을 엽니다.
+    function openLinkedProduct() {
+        var productId = new URLSearchParams(window.location.search).get('product');
+        if (!productId) return;
+        // URL을 CSS 선택자나 HTML로 삽입하지 않고 실제 상품 ID와 비교합니다.
+        var card = Array.from(document.querySelectorAll('.lunch-card[data-product-id]')).find(function (item) {
+            return item.dataset.productId === productId;
+        });
+        if (!card) return; // 없는 상품이면 정상 메뉴 목록을 표시
+        var allTab = document.getElementById('tab-all');
+        if (card.hidden && allTab) allTab.click();
+        card.scrollIntoView({ block: 'center', behavior: 'instant' });
+        openOrder(card);
+    }
+
     function closeOrder() {
         if (!dialog.open || closing) return;
         closing = true;
@@ -393,6 +408,12 @@ $(function () {
         clearTimeout(closeTimer);
         closing = false;
         dialog.classList.remove('is-closing');
+        // 닫은 뒤 새로고침해도 팝업이 다시 뜨지 않도록 주문 매개변수만 제거.
+        var cleanURL = new URL(window.location.href);
+        if (cleanURL.searchParams.has('product')) {
+            cleanURL.searchParams.delete('product');
+            try { window.history.replaceState(window.history.state, '', cleanURL.href); } catch (error) { /* 로컬 파일 브라우저 제한 시 무시 */ }
+        }
         if (savedBodyStyle === null) document.body.removeAttribute('style');
         else document.body.setAttribute('style', savedBodyStyle);
         window.scrollTo({ top: pageY, behavior: 'instant' });
@@ -455,4 +476,5 @@ $(function () {
             feedback('소쿠리에 저장하지 못했어요. 브라우저 저장 설정을 확인한 뒤 다시 시도해 주세요.');
         }
     });
+    openLinkedProduct();
 });
