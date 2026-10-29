@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 소개</title>
+
+    <!-- 웹 폰트 연결 -->
+    <!-- font-family: "Noto Sans KR", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/style3.css">
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/Favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!-- 헤더 -->
+        <div id="header">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_2.png" alt="동고리로고">
+                </a>
+            </h1>
+
+            <ul class="util">
+                <li><a href="#"><img src="./images/Icon_1.png" alt="로그인"></a></li>
+                <li><a href="#"><img src="./images/Icon_2.png" alt="장바구니"></a></li>
+            </ul>
+
+        </div>
+        <!-- 헤더 -->
+
+        <!-- nav -->
+        <div id="nav">
+            <ul class="gnb">
+                <li><a href="sub.html">메뉴</a></li>
+                <li><a href="sub.html">내 마음대로 동고리</a></li>
+                <li><a href="index3.html" aria-current="page">회사 소개</a></li>
+                <li><a href="#">정기 주문</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+
+            <div class="search_bar">
+                <!-- 검색 결과 페이지를 만들면 action 주소를 변경 -->
+                <form class="popular_search" action="search.html" method="get">
+
+                    <!-- 평소에 보이는 인기 메뉴 -->
+                    <button type="button" class="popular_open" aria-label="메뉴 검색하기">
+                        <span class="chart_label">인기차트</span>
+
+                        <!-- 한 줄만 보이는 영역 -->
+                        <span class="popular_window">
+                            <span class="popular_list">
+                                <span class="popular_item">
+                                    <span class="rank">NEW</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">1</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">2</span> 찰옥수수 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">3</span> 수육 동고리
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <input type="search" class="search_input" name="keyword" placeholder="찾으시는 도시락은?"
+                        aria-label="도시락 검색어" autocomplete="off" disabled hidden>
+
+                    <button type="submit" class="search_submit" aria-label="검색"></button>
+                </form>
+            </div>
+        </div>
+        <!-- nav -->
+    </div>
+
+
+
+    <main id="brand-story">
+        <section class="brand-intro" aria-labelledby="brand-title">
+            <p class="brand-about">ABOUT DONGGORI</p>
+            <h1 id="brand-title">맛있는 한끼가<br>그날의 행복한 하루를<br>만든다.</h1>
+        </section>
+
+        <section class="brand-hero" aria-labelledby="story-title">
+            <div class="brand-hero-copy">
+                <p class="brand-eyebrow">DONGGORI BRAND STORY</p>
+                <h2 id="story-title">고유한 손맛에<br>정성을 담아,<br>소중한 한 끼에<br>담았습니다.</h2>
+                <p>좋은 재료, 정직한 손맛, 그리고 대접하는 마음까지.<br>동고리 하나에 정성을 담아 전달합니다.</p>
+            </div>
+        </section>
+
+        <section class="brand-origin" aria-labelledby="origin-title">
+            <div class="brand-origin-photo" data-aos="fade-right">
+                <img src="images/Background1.gif" alt="대나무 도시락에 담은 정성스러운 한 끼" loading="lazy">
+            </div>
+            <div class="brand-origin-copy" data-aos="fade-left">
+                <h2 id="origin-title">동고리 유래</h2>
+                <p>정성껏 준비한 음식을 담아 누군가에게 건네던 마음.<br>동고리는 그 따뜻한 한 끼의 기억에서 시작합니다.</p>
+                <p>자연의 결을 담은 도시락에 익숙한 우리 음식을 채우고,<br>오늘의 입맛에 어울리는 즐거움을 더했습니다.<br>한 끼를 먹는 순간이 작은 행복으로 남도록,<br>재료를 고르는
+                    순간부터 정성을 담습니다.</p>
+                <img class="brand-mascot" src="images/Donggeuli_3.gif" alt="" loading="lazy">
+            </div>
+        </section>
+
+        <!-- 높이를 늘리면 각 설명이 화면에 고정되어 있는 스크롤 구간도 길어집니다. -->
+        <div class="brand-stack">
+            <section class="brand-pin-stage brand-tradition" aria-labelledby="tradition-title">
+                <div class="brand-pin">
+                    <div class="brand-value-layout">
+                        <div class="brand-value-copy">
+                            <p class="brand-eyebrow">01 — TRADITION · 전통</p>
+                            <h2 id="tradition-title">옛스러움을 보존하며, 현대에 담다.</h2>
+                            <p>자연의 대나무로 만든 전통적인 아름다움과<br>선조들의 지혜를 오늘의 도시락에 담았습니다.</p>
+                            <img class="brand-mascot" src="images/Donggeuli_2.gif" alt="" loading="lazy">
+                        </div>
+                        <img class="brand-value-photo" src="images/Lunch Container.png" alt="자연의 결을 살린 대나무 도시락 용기"
+                            loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-pin-stage brand-taste" aria-labelledby="taste-title">
+                <div class="brand-pin">
+                    <div class="brand-value-layout">
+                        <img class="brand-value-photo" src="images/Gujeolpan.png" alt="다채로운 재료를 정갈하게 담은 한식"
+                            loading="lazy">
+                        <div class="brand-value-copy">
+                            <p class="brand-eyebrow">02 — TASTE · 한식</p>
+                            <h2 id="taste-title">익숙한 한식을, 새로운 즐거움으로 담다.</h2>
+                            <p>정겨운 밥과 반찬을 한 끼에 듬뿍 담아<br>다양한 맛과 색을 한눈에 즐길 수 있도록 구성했으며,<br>익숙한 한식에 동고리만의 보는 즐거움을 더합니다.</p>
+                            <img class="brand-mascot" src="images/Donggeuli_5.gif" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-pin-stage brand-nature" aria-labelledby="nature-title">
+                <div class="brand-pin">
+                    <div class="brand-nature-card" data-aos="fade-up" data-aos-anchor-placement="center-center">
+                        <p class="brand-eyebrow">03 — NATURE · 자연</p>
+                        <h2 id="nature-title">한 끼의 즐거움을, 자연과 오래 이어가다.</h2>
+                        <p>자연 소재가 가진 따뜻한 질감과<br>다시 사용할 수 있는 도시락통을 통해<br>먹는 순간뿐 아니라 그 이후까지 생각합니다.</p>
+                        <p>옛것의 지혜를 잇고,<br>오늘의 한 끼를 담아,<br>내일의 자연으로 이어갑니다.</p>
+                        <img class="brand-mascot" src="images/Donggeuli_1.gif" alt="" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 데스크톱에서 사진의 가로 크기가 600px → 1200px로 커집니다. -->
+        </div>
+        <section class="brand-finale" aria-labelledby="finale-title">
+            <div class="brand-finale-sticky">
+                <div class="brand-finale-card">
+                    <img src="images/Background2.gif" alt="동고리 매장과 정성껏 음식을 준비하는 모습" loading="lazy">
+                    <div class="brand-finale-copy">
+                        <h2 id="finale-title">오래된 가치를 잇고, <br>
+                            새로운 일상을 만들어갑니다.</h2>
+                        <p>우리의 전통이 낯설지 않도록, 누구나 쉽게 경험할 수 있도록 <br>
+                            밥 동고리는 고리짝에 담긴 옛 지혜와 정성을 오늘의 한식으로 전하며, <br>
+                            세대를 넘어 사랑받는 도시락 브랜드로 성장하고자 합니다.</p>
+                        <p class="brand-finale-tagline">전통을 잇고, 오늘을 담아, 내일로 나아가다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== 푸터 ==================== -->
+    <footer id="home_footer" class="home_addition">
+        <div class="home_footer_inner"><a href="index.html" aria-label="동고리 홈"><img class="footer_logo"
+                    src="./images/logo3.gif" alt="동고리"></a>
+            <div class="footer_social">
+                <a href="#" aria-label="카카오톡">
+                    <img src="./images/KakaoTalk.gif" alt="카카오톡">
+                </a>
+
+                <a href="#" aria-label="페이스북">
+                    <img src="./images/Facebook.gif" alt="페이스북">
+                </a>
+
+                <a href="#" aria-label="인스타그램">
+                    <img src="./images/Instagram.gif" alt="인스타">
+                </a>
+
+                <a href="#" aria-label="유튜브">
+                    <img src="./images/YouTube.gif" alt="유튜브">
+                </a>
+            </div>
+        </div>
+        <!-- 실제 사업자 정보와 연락처는 이곳에 입력하세요. -->
+        <p>상세주소 : 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123 <br>
+            이메일 : johyunwoo@naver.com <br>
+            연락처 : 010 - 1234 - 5678 / 사업자 등록번호 111-22-345678</p><small>© DONGGORI. All rights reserved.</small>
+    </footer>
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- jQuery 연결 -->
+    <script src="js/script3.js"></script>
+</body>
+
+</html>
