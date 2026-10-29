@@ -712,6 +712,10 @@ h2,
     font-size: 17px;
     line-height: 1.8;
 }
+.brand_text {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+}
 
 /* AOS 속성의 등장 효과. 외부 라이브러리 없이 작동하고 JS를 꺼도 본문을 표시합니다. */
 .brand-motion [data-aos] {
