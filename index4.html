@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문페이지</title>
+
+    <!-- 웹 폰트 연결 -->
+    <!-- font-family: "Noto Sans KR", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/style4.css">
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/Favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!-- 헤더 -->
+        <div id="header">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_2.png" alt="동고리로고">
+                </a>
+            </h1>
+
+            <ul class="util">
+                <li><a href="#"><img src="./images/Icon_1.png" alt="로그인"></a></li>
+                <li><a href="#"><img src="./images/Icon_2.png" alt="장바구니"></a></li>
+            </ul>
+
+        </div>
+        <!-- 헤더 -->
+
+        <!-- nav -->
+        <div id="nav">
+            <ul class="gnb">
+                <li><a href="sub.html">메뉴</a></li>
+                <li><a href="sub.html?category=custom#tab-custom">내 마음대로 동고리</a></li>
+                <li><a href="index3.html">회사 소개</a></li>
+                <li><a href="index4.html">주문</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+
+            <div class="search_bar">
+                <!-- 검색 결과 페이지를 만들면 action 주소를 변경 -->
+                <form class="popular_search" action="search.html" method="get">
+
+                    <!-- 평소에 보이는 인기 메뉴 -->
+                    <button type="button" class="popular_open" aria-label="메뉴 검색하기">
+                        <span class="chart_label">인기차트</span>
+
+                        <!-- 한 줄만 보이는 영역 -->
+                        <span class="popular_window">
+                            <span class="popular_list">
+                                <span class="popular_item">
+                                    <span class="rank">NEW</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">1</span> 제육 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">2</span> 찰옥수수 동고리
+                                </span>
+                                <span class="popular_item">
+                                    <span class="rank">3</span> 수육 동고리
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <input type="search" class="search_input" name="keyword" placeholder="찾으시는 도시락은?"
+                        aria-label="도시락 검색어" autocomplete="off" disabled hidden>
+
+                    <button type="submit" class="search_submit" aria-label="검색"></button>
+                </form>
+            </div>
+        </div>
+        <!-- nav -->
+
+
+
+
+
+
+
+        <main id="order-page">
+            <div class="order-page-content">
+                
+                <section class="order-special" aria-labelledby="order-special-title">
+                    <div class="order-special-heading">
+                        <div>
+                            <h2 id="order-special-title">스페셜</h2>
+                            <p>소중한 사람들과 나누기 좋은 동고리 도시락</p>
+                        </div>
+                    </div>
+                    <div class="order-special-track" tabindex="0" role="region" aria-label="스페셜 도시락, 좌우 방향키 또는 드래그로 이동">
+                        <article class="order-special-card"><img src="images/Corn Lunch Box_5.png" alt="찰옥수수밥 닭갈비"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>찰옥수수밥 닭갈비</h3>
+                            <p>찰옥수수의 단맛과 닭갈비의 매콤함이 어우러진 동고리</p><strong>8,000원</strong>
+                        </article>
+                        <article class="order-special-card"><img src="images/Lunch Box_1.png" alt="수육 동고리"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>수육 동고리</h3>
+                            <p>부드러운 수육과 정갈한 반찬을 담은 도시락</p><strong>10,000원</strong>
+                        </article>
+                        <article class="order-special-card"><img src="images/Lunch Box_3.png" alt="돈까스 동고리"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>돈까스 동고리</h3>
+                            <p>바삭한 돈까스와 새우튀김이 있는 돈까스 도시락</p><strong>9,000원</strong>
+                        </article>
+                        <article class="order-special-card"><img src="images/Lunch Box_5.png" alt="함박 동고리"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>함박 동고리</h3>
+                            <p>함박스테이크와 바삭한 튀김을 담은 도시락</p><strong>8,500원</strong>
+                        </article>
+                        <article class="order-special-card"><img src="images/Lunch Box_9.png" alt="떡갈비 동고리"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>떡갈비 동고리</h3>
+                            <p>노릇한 떡갈비와 여러 반찬을 담은 동고리</p><strong>9,000</strong>
+                        </article>
+                        <article class="order-special-card"><img src="images/Lunch Box_11.png" alt="소불고기 동고리"
+                                draggable="false" loading="lazy" width="360" height="240"><span>스페셜 동고리</span>
+                            <h3>소불고기 동고리</h3>
+                            <p>소불고기와 달걀 프라이를 곁들인 동고리</p><strong>8,000</strong>
+                        </article>
+                    </div>
+
+                </section>
+                <form id="order-details-form">
+                    <section class="order-details" aria-labelledby="order-details-title">
+                        <div class="order-details-heading">
+                            <h2 id="order-details-title">주문 정보</h2>
+                            <p>받으실 분의 정보를 입력해 주세요.</p>
+                        </div>
+                        <div class="order-fields">
+                            <div class="order-field"><label for="order-name">이름</label><input id="order-name"
+                                    type="text" autocomplete="name" placeholder="받으실 분의 성함"></div>
+                            <div class="order-field"><label for="order-phone">전화번호</label><input id="order-phone"
+                                    type="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
+                            <div class="order-field order-field-wide"><label for="order-email">이메일</label><input
+                                    id="order-email" type="email" autocomplete="email" placeholder="example@email.com">
+                            </div>
+                            <div class="order-field order-field-wide"><span id="order-cart-label" class="order-cart-label">장바구니에 넣은 도시락
+                                    정보</span><div id="order-cart" role="list" aria-labelledby="order-cart-label">장바구니 정보를 불러오는 중입니다.</div><p id="order-cart-notice" role="status" aria-live="polite"></p>
+                                <div class="order-cart-footer"><a href="sub.html#lunch-menu">도시락 추가하러 가기 ↗</a><span>상품
+                                        합계 <strong id="order-cart-total">0원</strong></span></div><small> 배송비는 별도 1,500원 입니다.</small>
+                            </div>
+                            <div class="order-field order-field-wide"><label for="order-address">받을 주소</label><input
+                                    id="order-address" type="text" autocomplete="address-line1"
+                                    placeholder="도로명 주소 또는 지번 주소"><label for="order-address-detail">상세 주소</label><input
+                                    id="order-address-detail" type="text" autocomplete="address-line2"
+                                    placeholder="건물명, 동·호수 등"></div>
+                        </div>
+                        <aside class="order-bank" aria-labelledby="order-bank-title">
+                            <div>
+                                <h3 id="order-bank-title">계좌이체 안내</h3>
+                                
+                            </div>
+                            <div class="order-bank-number"><strong>000-0000-0000</strong>
+                                <p>국민은행 · 예금주: 동고리</p>
+                            </div>
+                        </aside>
+                    </section>
+                    <div class="order-submit-area"><button class="order-submit" type="button" disabled>주문하기</button>
+                        <p>주문 기능 준비 중입니다. 입력한 정보는 전송되지 않습니다.</p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- footer -->
+
+        <footer id="home_footer" class="home_addition">
+            <div class="home_footer_inner"><a href="index.html" aria-label="동고리 홈"><img class="footer_logo"
+                        src="./images/logo3.gif" alt="동고리"></a>
+                <div class="footer_social">
+                    <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fsharer.kakao.com%2Fpicker%2Flink%3Fapp_key%3D4e0f02e43248fed6c5850431ea527a61%26short_key%3D95d60600-d29c-48c5-ae61-88b9b3aa0166#login"
+                        aria-label="카카오톡" target="_blank">
+                        <img src="./images/KakaoTalk.gif" alt="카카오톡">
+                    </a>
+
+                    <a href="https://www.facebook.com/?locale=ko_KR" aria-label="페이스북" target="_blank">
+                        <img src="./images/Facebook.gif" alt="페이스북">
+                    </a>
+
+                    <a href="https://www.instagram.com/" aria-label="인스타그램" target="_blank">
+                        <img src="./images/Instagram.gif" alt="인스타">
+                    </a>
+
+                    <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" aria-label="유튜브" target="_blank">
+                        <img src="./images/YouTube.gif" alt="유튜브">
+                    </a>
+                </div>
+            </div>
+
+            <!-- 실제 사업자 정보와 연락처는 이곳에 입력하세요. -->
+            <p>상세주소 : 부산광역시 영도구 영선동 나무잎길 11 현조건물 - 123 <br>
+                이메일 : johyunwoo@naver.com <br>
+                연락처 : 010 - 1234 - 5678 / 사업자 등록번호 111-22-345678</p><small>© DONGGORI. All rights reserved.</small>
+        </footer>
+
+    </div>
+
+    <!-- jQuery  -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- jQuery 연결 -->
+    <script src="js/script4.js"></script>
+</body>
+
+</html>
