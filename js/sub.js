@@ -254,6 +254,15 @@ $(function () {
     const cards = Array.from(document.querySelectorAll('.lunch-card'));
     const status = document.querySelector('#menu-status');
     if (!tabs.length || !highlight || !panel) return;
+    // 새 페이지로 이동하며 생기는 포커스 링은 숨기고 실제 키보드 조작에만 표시합니다.
+    document.addEventListener('keydown', event => {
+        if (['Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+            document.documentElement.classList.add('menu-keyboard-navigation');
+        }
+    }, true);
+    document.addEventListener('pointerdown', () => {
+        document.documentElement.classList.remove('menu-keyboard-navigation');
+    }, true);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let activeIndex = 0;
     let animation;
