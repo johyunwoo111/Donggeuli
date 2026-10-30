@@ -306,6 +306,10 @@ $(function () {
             selectMenu(next, true);
         });
     });
+    // 다른 페이지에서 분류 링크로 들어오면 해당 탭과 상품 목록을 바로 선택합니다.
+    const linkedCategory = new URLSearchParams(window.location.search).get('category');
+    const linkedIndex = tabs.findIndex(tab => tab.dataset.filter === linkedCategory);
+    if (linkedIndex >= 0) selectMenu(linkedIndex);
 })();
 
 // ==================== 도시락 주문 팝업 ====================
