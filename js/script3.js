@@ -20,6 +20,11 @@
                 var pin = center && element.closest('.brand-pin');
                 var pinTop = pin ? Math.max(0, pin.getBoundingClientRect().top) : 0;
                 var visible = center ? rect.top + rect.height / 2 <= (height + pinTop) / 2 + 4 : rect.top < height * .88;
+                // 배너 설명은 페이지를 내리고 배너가 화면 안으로 들어왔을 때 표시합니다.
+                if (element.classList.contains('brand-hero-copy')) {
+                    var heroRect = element.closest('.brand-hero').getBoundingClientRect();
+                    visible = window.scrollY > 20 && heroRect.top <= height * .55 && heroRect.bottom > 0;
+                }
                 if (visible || reduced.matches) element.classList.add('aos-animate');
             });
             if (!finale || !card) return;
