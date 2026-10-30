@@ -1035,3 +1035,24 @@ h2,
     font-weight: 400;
     line-height: 1.6;
 }
+/* 첫 화면에서도 실행되는 소개 문구 확대 등장 효과 */
+.brand-motion [data-aos='zoom-in-up'] {
+    transform: translateY(30px) scale(.94);
+    transform-origin: center bottom;
+}
+.brand-motion [data-aos='zoom-in-up'].aos-animate {
+    transform: translateY(0) scale(1);
+    animation: brand-intro-zoom-in-up 2s cubic-bezier(.25,.1,.25,1) .6s both;
+}
+@keyframes brand-intro-zoom-in-up {
+    from { opacity: 0; transform: translateY(30px) scale(.94); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce), (max-height: 650px) {
+    .brand-motion [data-aos='zoom-in-up'],
+    .brand-motion [data-aos='zoom-in-up'].aos-animate {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
