@@ -1,0 +1,795 @@
+@charset "utf-8";
+
+/* 경복궁 수문장 제목체 웹폰트 */
+@font-face {
+    font-family: 'GyeongbokgungSumunjangTitle';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-3@1.0/Sumunjang_TitleB.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* 영월체 제목체 웹폰트 */
+@font-face {
+    font-family: 'Yeongwol';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/YeongwolTTF-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    cursor: url("../images/Donggeuli.png") 16 16, auto;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #111;
+    background: url(../images/Background_2.jpg) center;
+}
+
+/* ================================== header ================================== */
+#wrap {
+    min-width: 1200px;
+    height: 90px;
+
+    /* 로고와 아이콘 */
+    position: relative;
+}
+
+#header {
+    width: 1740px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    /* position 자식 */
+    position: relative;
+    z-index: 2;
+    /* 빈 영역이 아래 메뉴 클릭을 막지 않게 설정 */
+    pointer-events: none;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.logo img {
+    display: block;
+    width: 110px;
+    height: auto;
+}
+
+/* 아이콘 */
+.util {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    position: absolute;
+    top: 50%;
+    right: 270px;
+    transform: translateY(-50%);
+}
+
+.util li:first-child img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.util li:last-child img {
+    object-fit: contain;
+}
+
+.logo a,
+.util a {
+    pointer-events: auto;
+}
+
+/* ===== nav ====== */
+#nav {
+    width: 1200px;
+    height: 90px;
+    box-sizing: border-box;
+    padding-right: 160px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 15px;
+
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: all 0.5s;
+}
+
+.gnb>li>a:hover {
+    color: #936b3c;
+}
+
+/* 검색바 */
+.search_bar {
+    flex-shrink: 0;
+}
+
+.popular_search {
+    width: 245px;
+    height: 42px;
+    padding: 0 14px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+/* 인기 메뉴버튼 */
+.popular_open {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.chart_label {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* 메뉴 */
+.popular_window {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    overflow: hidden;
+}
+
+.popular_search .rank {
+    color: #ed3027;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.popular_list {
+    display: block;
+    margin-top: 0;
+}
+
+.popular_item {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.popular_search .search_input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    font-size: 12px;
+}
+
+.search_input::placeholder {
+    color: #888;
+}
+
+.search_submit {
+    flex-shrink: 0;
+    width: 26px;
+    height: 30px;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+    background-image: url(../images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+
+    cursor: pointer;
+}
+
+.popular_search:focus-within {
+    box-shadow: 0 0 0 2px #b39454;
+}
+
+.popular_search [hidden] {
+    display: none !important;
+}
+
+
+
+
+
+
+#home_footer {
+    margin-top: 100px;
+    padding: 35px 50px 40px;
+    background: #805339;
+    color: #ede1cc;
+    text-align: center;
+}
+
+.home_footer_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: auto auto 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebe6df44;
+}
+
+.footer_logo {
+    display: block;
+    width: 130px;
+}
+
+.footer_social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer_social img {
+    width: 55px;
+    height: 45px;
+    object-fit: contain;
+}
+
+#home_footer p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#home_footer small {
+    font-size: 10px;
+    opacity: .65;
+}
+
+/* ==================== 주문 페이지 본문 ==================== */
+#order-page {
+    width: min(1320px, 92%);
+    margin: 0 auto;
+    color: #493321;
+}
+
+#order-page *,
+#order-page *::before,
+#order-page *::after {
+    box-sizing: border-box;
+}
+
+#order-page button,
+#order-page input,
+#order-page textarea {
+    font: inherit;
+}
+
+#order-page button {
+    cursor: pointer;
+}
+
+#order-page h1 {
+    font-family: 'Yeongwol', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+}
+
+.order-page-intro {
+    text-align: center;
+    padding: 100px 0 85px;
+    border-bottom: 1px solid #a8896640;
+}
+
+.order-page-kicker {
+    font-size: 12px;
+    letter-spacing: .22em;
+    color: #987858;
+    margin-bottom: 18px;
+}
+
+.order-page-intro h1 {
+    font-size: 64px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.order-page-intro>p:last-child {
+    font-size: 18px;
+    color: #78604b;
+}
+
+.order-special {
+    padding: 85px 0 100px;
+}
+
+.order-special-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.order-special-heading h2 {
+    font-size: 75px;
+    margin-bottom: 10px;
+}
+
+.order-special-heading p {
+    color: #8c7059;
+}
+
+.order-special-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    touch-action: pan-x pan-y;
+    padding: 10px 0 20px;
+}
+
+.order-special-track::-webkit-scrollbar {
+    display: none;
+}
+
+.order-special-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+}
+
+.order-special-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    padding: 28px 24px 30px;
+    background: #fffcf3d9;
+    border: 1px solid #b79e7738;
+    border-radius: 22px;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.order-special-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    pointer-events: none;
+    margin-bottom: 24px;
+}
+
+.order-special-card span {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #e9e7b3;
+    color: #666127;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.order-special-card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.order-special-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #8b715c;
+    min-height: 50px;
+    word-break: keep-all;
+}
+
+.order-special-card strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 19px;
+}
+
+.order-special-hint {
+    text-align: center;
+    color: #9a826a;
+    font-size: 12px;
+    margin-top: 16px;
+}
+
+.order-details {
+    background: #fffaf0ed;
+    border: 1px solid #baa18266;
+    border-radius: 28px;
+    padding: 55px 60px;
+    box-shadow: 0 15px 50px #68432c08;
+}
+
+.order-details-heading {
+    border-bottom: 1px solid #cbb89e;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.order-details-heading h2 {
+    font-size: 36px;
+}
+
+.order-details-heading p {
+    font-size: 13px;
+    color: #947b63;
+}
+
+.order-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 30px;
+}
+
+.order-field {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    min-width: 0;
+}
+
+.order-field-wide {
+    grid-column: 1 / -1;
+}
+
+.order-field label {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.order-field input,
+.order-field textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d7c7b4;
+    border-radius: 10px;
+    background: #fffefa;
+    color: #493321;
+}
+
+.order-field input::placeholder,
+.order-field textarea::placeholder {
+    color: #b1a18c;
+}
+
+.order-field textarea {
+    resize: vertical;
+    min-height: 145px;
+    line-height: 1.9;
+}
+
+.order-field textarea[readonly] {
+    background: #f3ede1;
+}
+
+.order-cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.order-cart-footer a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.order-cart-footer strong {
+    font-size: 20px;
+}
+
+.order-field small {
+    color: #8c7762;
+}
+
+.order-bank {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    align-items: center;
+    background: #eee4d3;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 36px;
+}
+
+.order-bank h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+.order-bank p {
+    font-size: 13px;
+    color: #8b715c;
+}
+
+.order-bank-number {
+    text-align: right;
+}
+
+.order-bank-number strong {
+    display: block;
+    font-size: 23px;
+    letter-spacing: .04em;
+    margin-bottom: 6px;
+}
+
+.order-submit-area {
+    text-align: center;
+    padding: 45px 0 80px;
+}
+
+#order-page .order-submit {
+    width: min(360px, 100%);
+    min-height: 64px;
+    border: 0;
+    border-radius: 12px;
+    background: #7b5941;
+    color: #fff9eb;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.order-submit-area p {
+    margin-top: 15px;
+    color: #90775f;
+    font-size: 13px;
+}
+
+#order-page :focus-visible {
+    outline: 3px solid #a67b45;
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+    .order-special-card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+    .order-details {
+        padding: 35px 28px;
+    }
+}
+
+@media (max-width: 610px) {
+    .order-page-intro {
+        padding: 65px 0 45px;
+    }
+
+    .order-page-intro h1 {
+        font-size: 46px;
+    }
+
+    .order-page-intro>p:last-child {
+        font-size: 15px;
+    }
+
+    .order-special {
+        padding: 50px 0;
+    }
+
+    .order-special-heading h2 {
+        font-size: 32px;
+    }
+
+    .order-special-card {
+        flex-basis: 86%;
+    }
+
+    .order-special-card img {
+        height: 200px;
+    }
+
+    .order-details {
+        padding: 28px 20px;
+    }
+
+    .order-details-heading {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .order-details-heading h2 {
+        font-size: 29px;
+    }
+
+    .order-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .order-bank {
+        padding: 24px 20px;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .order-bank-number {
+        text-align: left;
+    }
+
+    .order-bank-number strong {
+        font-size: 20px;
+    }
+}
+
+/* 주문 페이지의 h2 제목은 영월체로 통일 */
+#order-page h2 {
+    font-family: "Yeongwol", "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+/* 도시락별 수량 감소 / 삭제 */
+.order-cart-label {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#order-cart {
+    background: #f3ede1;
+    border: 1px solid #d7c7b4;
+    border-radius: 10px;
+    padding: 8px 18px;
+    min-height: 100px;
+    line-height: 1.8;
+}
+
+.order-cart-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+}
+
+.order-cart-row+.order-cart-row {
+    border-top: 1px solid #d7c7b4;
+}
+
+.order-cart-description {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.order-cart-description small {
+    display: block;
+    margin-top: 4px;
+}
+
+.order-cart-amount {
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#order-page .order-cart-minus {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bfa386;
+    border-radius: 50%;
+    background: #fffaf0;
+    color: #68432c;
+    font-size: 24px;
+    line-height: 1;
+}
+
+#order-page .order-cart-minus:hover {
+    background: #e7d7c2;
+}
+
+#order-cart-notice {
+    font-size: 13px;
+    color: #79553b;
+}
+
+#order-cart-notice:empty {
+    display: none;
+}
+
+@media (max-width: 610px) {
+    .order-cart-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .order-cart-description {
+        flex-basis: calc(100% - 58px);
+    }
+
+    .order-cart-minus {
+        order: 1;
+    }
+
+    .order-cart-amount {
+        order: 2;
+        width: 100%;
+    }
+}
