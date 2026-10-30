@@ -450,7 +450,9 @@ body {
     color: #fff0b5;
 }
 
-.menu-tab:focus-visible {
+/* 클릭 및 페이지 이동에서는 테두리를 숨기고 키보드 조작에만 표시합니다. */
+.menu-tab:focus { outline: none; }
+.menu-keyboard-navigation .menu-tab:focus-visible {
     outline: 3px solid #fff0b5;
     outline-offset: -10px;
     border-radius: 20px;
