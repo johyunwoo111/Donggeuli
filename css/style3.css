@@ -474,11 +474,12 @@ h2,
 
 .brand-hero h2 {
     font-family: 'Yeongwol', sans-serif;
-    
+
     font-size: 60px;
     line-height: 1.28;
     margin-bottom: 38px;
 }
+
 #brand-story .brand-hero h2 {
     font-family: 'Yeongwol', sans-serif;
     font-weight: 400;
@@ -712,6 +713,7 @@ h2,
     font-size: 17px;
     line-height: 1.8;
 }
+
 .brand_text {
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 700;
@@ -1022,6 +1024,7 @@ h2,
         --stack-top: 48px;
     }
 }
+
 /* 마지막 설명 아래 구분선과 브랜드 문구 */
 .brand-finale-copy .brand-finale-tagline {
     width: min(100%, 520px);
