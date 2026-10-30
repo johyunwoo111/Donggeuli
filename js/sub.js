@@ -469,7 +469,7 @@ $(function () {
     $dialog.find('.order-add').on('click', function () {
         if (!currentProduct || closing) return;
         // 결제/서버 주문은 하지 않습니다. 현재 브라우저의 소쿠리에 저장합니다.
-        // 실제 주문 페이지 연결은 이 부분에서 구현하면 됩니다.
+        // 소쿠리에 저장한 뒤 현재 팝업에서 완료 안내를 표시합니다.
         try {
             var cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
             if (!Array.isArray(cart)) throw new Error('Invalid cart');
@@ -484,7 +484,7 @@ $(function () {
                 price: currentProduct.price, sides: sides, quantity: 1
             });
             localStorage.setItem(cartKey, JSON.stringify(cart));
-            feedback(currentProduct.name + ' 1개를 소쿠리에 담았어요. 이 브라우저에 저장되며, 결제·주문 접수는 아직 진행되지 않습니다.');
+            feedback(currentProduct.name + ' 1개를 소쿠리에 담았어요.');
         } catch (error) {
             feedback('소쿠리에 저장하지 못했어요. 브라우저 저장 설정을 확인한 뒤 다시 시도해 주세요.');
         }
