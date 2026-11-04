@@ -489,7 +489,8 @@ $(function () {
 
     function measureWheel() {
         // contain으로 표시된 쟁반에 맞춰 원형 궤도를 사용
-        radiusX = Math.min(wheel.width(), wheel.height()) * 0.43;
+        const orbitRatio = window.matchMedia("(max-width: 768px)").matches ? 0.32 : 0.43;
+        radiusX = Math.min(wheel.width(), wheel.height()) * orbitRatio;
         radiusY = radiusX;
     }
 
@@ -767,6 +768,7 @@ $(function () {
         specialtySection.appendChild(pin);
         specialtySection.classList.add('specialty_pinned');
 
+        const stackedSpecialty = window.matchMedia("(max-width: 768px)");
         var travel = 0;
         // 첫 메뉴와 마지막 메뉴에서 화면을 유지하는 추가 스크롤 거리(px).
         // 더 오래 머무르게 하려면 아래 숫자를 키우세요.
@@ -779,6 +781,7 @@ $(function () {
         }
         function syncSpecialty() {
             scrollFrame = 0;
+            if (stackedSpecialty.matches) return;
             var progress = Math.max(0, Math.min(travel, window.scrollY - sectionStart() - holdBefore));
             specialtyList.scrollTop = progress;
         }
@@ -787,6 +790,11 @@ $(function () {
         }
         function measureSpecialty() {
             measureFrame = 0;
+            if (stackedSpecialty.matches) {
+                specialtySection.style.removeProperty("height");
+                specialtyList.scrollTop = 0;
+                return;
+            }
             travel = Math.max(0, specialtyList.scrollHeight - specialtyList.clientHeight);
             // 추가 스크롤 거리만큼 섹션을 늘려 다음 콘텐츠와 겹치지 않도록 합니다.
             specialtySection.style.height = (pin.offsetHeight + holdBefore + travel + holdAfter) + 'px';
@@ -811,7 +819,7 @@ $(function () {
         // Tab으로 화면 밖의 메뉴를 선택해도 해당 메뉴가 보이도록 페이지 진행도를 맞춤.
         specialtyList.addEventListener('focusin', function (event) {
             var link = event.target.closest('a');
-            if (!link) return;
+            if (!link || stackedSpecialty.matches) return;
             var listRect = specialtyList.getBoundingClientRect();
             var linkRect = link.getBoundingClientRect();
             var itemTop = linkRect.top - listRect.top + specialtyList.scrollTop;
