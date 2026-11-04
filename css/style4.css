@@ -167,6 +167,30 @@ body {
     color: #936b3c;
 }
 
+/* 로고와 오른쪽 아이콘 사이에서 메뉴와 검색창이 화면 폭을 나눠 씁니다. */
+@media (min-width: 1201px) {
+    #header {
+        width: min(1740px, calc(100% - 64px));
+    }
+
+    #header .util {
+        right: 0;
+    }
+
+    #nav {
+        width: min(1200px, calc(100% - 352px));
+        padding: 0;
+    }
+
+    #nav .gnb {
+        gap: clamp(10px, 1.6vw, 32px);
+    }
+
+    #nav .gnb > li > a {
+        padding-inline: clamp(8px, 0.8vw, 15px);
+    }
+}
+
 /* 검색바 */
 .search_bar {
     flex-shrink: 0;
