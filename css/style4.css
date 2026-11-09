@@ -338,7 +338,7 @@ body {
 }
 
 .footer_social img {
-    width: 55px;
+    width: 48px;
     height: 45px;
     object-fit: contain;
 }
@@ -521,7 +521,7 @@ body {
 }
 
 .order-details-heading p {
-    font-size: 13px;
+    font-size: 14px;
     color: #947b63;
 }
 
@@ -543,7 +543,7 @@ body {
 }
 
 .order-field label {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -646,7 +646,7 @@ body {
 .order-submit-area p {
     margin-top: 15px;
     color: #90775f;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #order-page :focus-visible {

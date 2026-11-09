@@ -1,20 +1,8 @@
 @charset "utf-8";
 
-/* 창원단감아삭체 웹폰트 */
-@font-face {
-    font-family: 'ChangwonDanggamAsak';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
-}
 
-/* 경복궁 수문장 제목체 웹폰트 */
-@font-face {
-    font-family: 'GyeongbokgungSumunjangTitle';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-3@1.0/Sumunjang_TitleB.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-}
+
+
 
 /* 영월체 제목체 웹폰트 */
 @font-face {
@@ -475,7 +463,7 @@ h2,
 .brand-hero h2 {
     font-family: 'Yeongwol', sans-serif;
 
-    font-size: 60px;
+    font-size: 70px;
     line-height: 1.28;
     margin-bottom: 38px;
 }
@@ -486,7 +474,7 @@ h2,
 }
 
 .brand-hero-copy>p:last-child {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.8;
 }
 
@@ -574,7 +562,7 @@ h2,
 }
 
 .brand-value-copy h2 {
-    font-size: 65px;
+    font-size: 70px;
     margin-bottom: 44px;
 }
 
@@ -644,7 +632,7 @@ h2,
 }
 
 .brand-nature-card>p:not(.brand-eyebrow) {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     margin: 26px 0;
 }
@@ -704,13 +692,13 @@ h2,
 }
 
 .brand-finale-copy h2 {
-    font-size: clamp(26px, 2.6vw, 48px);
+    font-size: clamp(26px, 2.6vw, 70px);
     line-height: 1.45;
     margin-bottom: 22px;
 }
 
 .brand-finale-copy p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
 }
 
@@ -771,7 +759,7 @@ h2,
 }
 
 .footer_social img {
-    width: 42px;
+    width: 48px;
     height: 42px;
     object-fit: contain;
 }

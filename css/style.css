@@ -1,12 +1,6 @@
 @charset "utf-8";
 
-/* 창원단감아삭체 웹폰트 */
-@font-face {
-    font-family: 'ChangwonDanggamAsak';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
-}
+
 
 /* 경복궁 수문장 제목체 웹폰트 */
 @font-face {
@@ -54,7 +48,7 @@ html {
 body {
     cursor: url("../images/Donggeuli.png") 16 16, auto;
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
     font-weight: 500;
     color: #111;
@@ -393,9 +387,9 @@ body {
 }
 
 #menu_section .menu_title {
-    font-family: 'ChangwonDanggamAsak';
+    font-family: 'GyeongbokgungSumunjangTitle';
     margin-bottom: 30px;
-    font-size: 44px;
+    font-size: 48px;
     color: #593520;
 }
 
@@ -590,7 +584,7 @@ body {
 
 .menu_summary {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     word-break: keep-all;
 }
@@ -809,7 +803,7 @@ body {
 .rotate_composition {
     margin-bottom: 28px;
 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.9;
     color: #78614b;
     word-break: keep-all;
@@ -1012,7 +1006,7 @@ body {
 
 .home_eyebrow {
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 2px;
 }
 
@@ -1022,7 +1016,7 @@ body {
 }
 
 .home_section_heading h2 {
-    font-family: 'ChangwonDanggamAsak', sans-serif;
+    font-family: 'GyeongbokgungSumunjangTitle', sans-serif;
     font-size: 48px;
     line-height: 1.3;
 }
@@ -1153,7 +1147,7 @@ body {
 
 .specialty_photo p {
     margin-top: 12px;
-    font-size: 14px;
+    
     color: #8a765e;
     line-height: 1.7;
 }
@@ -1440,13 +1434,13 @@ body {
 }
 
 .footer_social img {
-    width: 55px;
+    width: 48px;
     height: 45px;
     object-fit: contain;
 }
 
 #home_footer p {
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -1478,13 +1472,14 @@ body {
     }
 }
 
+
 /* Mobile: 600px 이하 */
 @media screen and (max-width: 600px) {
     #wrap {
         width: 100%;
         height: 66px;
     }
-
+    
     #header {
         width: 100%;
         height: 66px;

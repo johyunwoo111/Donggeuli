@@ -1,12 +1,6 @@
 @charset "utf-8";
 
-/* 창원단감아삭체 웹폰트 */
-@font-face {
-    font-family: 'ChangwonDanggamAsak';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
-}
+
 
 /* 경복궁 수문장 제목체 웹폰트 */
 @font-face {
@@ -439,7 +433,7 @@ body {
     background: transparent;
     color: #fff7e9;
     font: inherit;
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 800;
     cursor: pointer;
     text-shadow: 0 2px 5px #623516;
@@ -451,7 +445,10 @@ body {
 }
 
 /* 클릭 및 페이지 이동에서는 테두리를 숨기고 키보드 조작에만 표시합니다. */
-.menu-tab:focus { outline: none; }
+.menu-tab:focus {
+    outline: none;
+}
+
 .menu-keyboard-navigation .menu-tab:focus-visible {
     outline: 3px solid #fff0b5;
     outline-offset: -10px;
@@ -565,7 +562,7 @@ body {
 .lunch-description {
     max-width: 290px;
     min-height: 38px;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.45;
     word-break: keep-all;
 }
@@ -814,7 +811,7 @@ body {
 }
 
 .footer_social img {
-    width: 55px;
+    width: 48px;
     height: 45px;
     object-fit: contain;
 }
@@ -1073,7 +1070,7 @@ body {
 .order-purchase small {
     display: block;
     margin-top: 4px;
-    font-size: 10px;
+    font-size: 11px;
     color: #dcc9b8;
 }
 
@@ -1293,6 +1290,7 @@ body {
         animation: none;
     }
 }
+
 /* 팝업 크기: 도시락은 넓은 72% 화면, 반찬은 기존 도시락 크기인 54% 화면 */
 #lunch-order-dialog {
     width: 100%;
@@ -1302,26 +1300,98 @@ body {
     max-height: 72dvh;
     border-radius: 48px 48px 0 0;
 }
-#lunch-order-dialog .order-sheet { padding: 26px 60px; }
-#lunch-order-dialog .order-card { padding: 24px 34px 22px; border-radius: 54px; }
-#lunch-order-dialog .order-main { gap: 26px; }
-#lunch-order-dialog .order-image { height: min(31vh, 350px); }
-#lunch-order-dialog #order-title { margin: 16px 0 12px; font-size: clamp(27px, 2.3vw, 40px); }
-#lunch-order-dialog #order-description { font-size: 14px; line-height: 1.8; }
-#lunch-order-dialog .order-purchase { margin-top: 24px; }
-#lunch-order-dialog .order-price { font-size: 36px; }
-#lunch-order-dialog .order-cart-wrap { padding-top: 34px; }
-#lunch-order-dialog .order-mascot { width: 62px; height: 62px; top: -15px; }
-#lunch-order-dialog .order-add { font-size: 18px; padding: 12px 22px; }
-#lunch-order-dialog .order-sides { margin-top: 22px; padding-top: 16px; }
-#lunch-order-dialog .order-sides-heading h3 { font-size: 21px; }
-#lunch-order-dialog .order-side-help { margin: 5px 0 9px; font-size: 11px; }
-#lunch-order-dialog .order-side-columns { gap: 25px; }
-#lunch-order-dialog .order-options { gap: 10px 16px; }
-#lunch-order-dialog .order-option { min-height: 34px; padding: 5px 10px; font-size: 13px; }
-#lunch-order-dialog .order-feedback { min-height: 0; margin-top: 10px; }
-#lunch-order-dialog .order-feedback:empty { display: none; }
-#lunch-order-dialog .order-sides[hidden] { display: none; }
+
+#lunch-order-dialog .order-sheet {
+    padding: 26px 60px;
+}
+
+#lunch-order-dialog .order-card {
+    padding: 24px 34px 22px;
+    border-radius: 54px;
+}
+
+#lunch-order-dialog .order-main {
+    gap: 26px;
+}
+
+#lunch-order-dialog .order-image {
+    height: min(31vh, 350px);
+}
+
+#lunch-order-dialog #order-title {
+    margin: 16px 0 12px;
+    font-size: clamp(27px, 2.3vw, 40px);
+}
+
+#lunch-order-dialog #order-description {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+#lunch-order-dialog .order-purchase {
+    margin-top: 24px;
+}
+
+#lunch-order-dialog .order-price {
+    font-size: 36px;
+}
+
+#lunch-order-dialog .order-cart-wrap {
+    padding-top: 34px;
+}
+
+#lunch-order-dialog .order-mascot {
+    width: 62px;
+    height: 62px;
+    top: -15px;
+}
+
+#lunch-order-dialog .order-add {
+    font-size: 18px;
+    padding: 12px 22px;
+}
+
+#lunch-order-dialog .order-sides {
+    margin-top: 22px;
+    padding-top: 16px;
+}
+
+#lunch-order-dialog .order-sides-heading h3 {
+    font-size: 21px;
+}
+
+#lunch-order-dialog .order-side-help {
+    margin: 5px 0 9px;
+    font-size: 11px;
+}
+
+#lunch-order-dialog .order-side-columns {
+    gap: 25px;
+}
+
+#lunch-order-dialog .order-options {
+    gap: 10px 16px;
+}
+
+#lunch-order-dialog .order-option {
+    min-height: 34px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+#lunch-order-dialog .order-feedback {
+    min-height: 0;
+    margin-top: 10px;
+}
+
+#lunch-order-dialog .order-feedback:empty {
+    display: none;
+}
+
+#lunch-order-dialog .order-sides[hidden] {
+    display: none;
+}
+
 /* 단품 반찬: 선택 영역 없이 기존 도시락 팝업 크기로 표시 */
 #lunch-order-dialog.is-side-dish {
     width: min(1180px, calc(100% - 40px));
@@ -1330,42 +1400,180 @@ body {
     max-height: 54vh;
     max-height: 54dvh;
 }
-#lunch-order-dialog.is-side-dish .order-sheet { padding: 24px 40px; min-height: 100%; display: flex; align-items: center; }
-#lunch-order-dialog.is-side-dish .order-card { border-radius: 24px; background: #704c34; }
-#lunch-order-dialog.is-side-dish .order-main { grid-template-columns: .9fr 1fr; gap: 22px; }
-#lunch-order-dialog.is-side-dish .order-image { height: min(36vh, 360px); }
-#lunch-order-dialog.is-side-dish .order-mascot { display: none; }
-#lunch-order-dialog.is-side-dish .order-cart-wrap { padding-top: 0; }
+
+#lunch-order-dialog.is-side-dish .order-sheet {
+    padding: 24px 40px;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#lunch-order-dialog.is-side-dish .order-card {
+    border-radius: 24px;
+    background: #704c34;
+}
+
+#lunch-order-dialog.is-side-dish .order-main {
+    grid-template-columns: .9fr 1fr;
+    gap: 22px;
+}
+
+#lunch-order-dialog.is-side-dish .order-image {
+    height: min(36vh, 360px);
+}
+
+#lunch-order-dialog.is-side-dish .order-mascot {
+    display: none;
+}
+
+#lunch-order-dialog.is-side-dish .order-cart-wrap {
+    padding-top: 0;
+}
+
 @media(max-width:600px) {
-    #lunch-order-dialog, #lunch-order-dialog.is-side-dish { width: calc(100% - 16px); }
-    #lunch-order-dialog .order-sheet, #lunch-order-dialog.is-side-dish .order-sheet { padding: 45px 12px 14px; }
-    #lunch-order-dialog .order-card { padding: 18px; }
-    #lunch-order-dialog .order-image { height: 150px; }
-    #lunch-order-dialog.is-side-dish .order-main { grid-template-columns: 1fr 1fr; gap: 12px; }
-    #lunch-order-dialog.is-side-dish #order-title { font-size: 21px; }
-    #lunch-order-dialog .order-purchase { gap: 10px; }
+
+    #lunch-order-dialog,
+    #lunch-order-dialog.is-side-dish {
+        width: calc(100% - 16px);
+    }
+
+    #lunch-order-dialog .order-sheet,
+    #lunch-order-dialog.is-side-dish .order-sheet {
+        padding: 45px 12px 14px;
+    }
+
+    #lunch-order-dialog .order-card {
+        padding: 18px;
+    }
+
+    #lunch-order-dialog .order-image {
+        height: 150px;
+    }
+
+    #lunch-order-dialog.is-side-dish .order-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    #lunch-order-dialog.is-side-dish #order-title {
+        font-size: 21px;
+    }
+
+    #lunch-order-dialog .order-purchase {
+        gap: 10px;
+    }
 }
 
 
 /* PC 헤더의 한 줄 배치를 작은 화면에서도 같은 비율로 유지합니다. */
 @media (max-width: 1740px) {
-    #wrap { min-width: 0; width: 100%; height: 4.6875vw; padding: 0; }
-    #header { width: 90.625vw; height: 4.6875vw; margin: 0 auto; }
-    #header .logo { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
-    #header .logo img { width: 5.729167vw; height: auto; }
-    #header .util { position: absolute; top: 50%; right: 14.0625vw; gap: 1.5625vw; transform: translateY(-50%); }
-    #header .util li:first-child img { width: 2.083333vw; height: 2.083333vw; }
-    #header .util li:last-child img { width: 2.604167vw; height: auto; }
-    #nav { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 62.5vw; height: 4.6875vw; padding: 0 8.333333vw 0 0; gap: .78125vw; }
-    #nav .gnb { gap: 2.083333vw; flex-shrink: 0; }
-    #nav .gnb > li > a { padding: .520833vw .78125vw; font-size: .833333vw; white-space: nowrap; }
-    #nav .search_bar { display: block; flex-shrink: 0; }
-    #nav .popular_search { width: 12.760417vw; height: 2.1875vw; padding: 0 .729167vw; gap: .416667vw; border-radius: 1.5625vw; }
-    #nav .popular_open { gap: .520833vw; }
-    #nav .chart_label { font-size: .520833vw; }
-    #nav .popular_window, #nav .popular_item { height: 1.25vw; }
-    #nav .popular_item { line-height: 1.25vw; font-size: .625vw; }
-    #nav .popular_search .rank { margin-right: .3125vw; }
-    #nav .popular_search .search_input { font-size: .625vw; }
-    #nav .search_submit { width: 1.354167vw; height: 1.5625vw; background-size: 1.041667vw 1.041667vw; }
+    #wrap {
+        min-width: 0;
+        width: 100%;
+        height: 4.6875vw;
+        padding: 0;
+    }
+
+    #header {
+        width: 90.625vw;
+        height: 4.6875vw;
+        margin: 0 auto;
+    }
+
+    #header .logo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #header .logo img {
+        width: 5.729167vw;
+        height: auto;
+    }
+
+    #header .util {
+        position: absolute;
+        top: 50%;
+        right: 14.0625vw;
+        gap: 1.5625vw;
+        transform: translateY(-50%);
+    }
+
+    #header .util li:first-child img {
+        width: 2.083333vw;
+        height: 2.083333vw;
+    }
+
+    #header .util li:last-child img {
+        width: 2.604167vw;
+        height: auto;
+    }
+
+    #nav {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 62.5vw;
+        height: 4.6875vw;
+        padding: 0 8.333333vw 0 0;
+        gap: .78125vw;
+    }
+
+    #nav .gnb {
+        gap: 2.083333vw;
+        flex-shrink: 0;
+    }
+
+    #nav .gnb>li>a {
+        padding: .520833vw .78125vw;
+        font-size: .833333vw;
+        white-space: nowrap;
+    }
+
+    #nav .search_bar {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    #nav .popular_search {
+        width: 12.760417vw;
+        height: 2.1875vw;
+        padding: 0 .729167vw;
+        gap: .416667vw;
+        border-radius: 1.5625vw;
+    }
+
+    #nav .popular_open {
+        gap: .520833vw;
+    }
+
+    #nav .chart_label {
+        font-size: .520833vw;
+    }
+
+    #nav .popular_window,
+    #nav .popular_item {
+        height: 1.25vw;
+    }
+
+    #nav .popular_item {
+        line-height: 1.25vw;
+        font-size: .625vw;
+    }
+
+    #nav .popular_search .rank {
+        margin-right: .3125vw;
+    }
+
+    #nav .popular_search .search_input {
+        font-size: .625vw;
+    }
+
+    #nav .search_submit {
+        width: 1.354167vw;
+        height: 1.5625vw;
+        background-size: 1.041667vw 1.041667vw;
+    }
 }
