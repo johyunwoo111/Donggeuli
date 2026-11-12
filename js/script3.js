@@ -7,6 +7,28 @@
         var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
         var finale = root.querySelector('.brand-finale');
         var card = root.querySelector('.brand-finale-card');
+        // 모바일에서도 PC의 사진/설명 순차 등장 효과를 사용합니다.
+        // 기존 HTML은 유지하고 모바일일 때만 data-aos 속성을 추가합니다.
+        var mobileBrand = window.matchMedia('(max-width: 768px)');
+        var mobileTargets = [
+            ['.brand-tradition .brand-value-photo', 'fade-right'],
+            ['.brand-tradition .brand-value-copy', 'fade-up'],
+            ['.brand-taste .brand-value-photo', 'fade-left'],
+            ['.brand-taste .brand-value-copy', 'fade-up']
+        ];
+        function syncMobileTargets() {
+            mobileTargets.forEach(function (entry) {
+                var element = root.querySelector(entry[0]);
+                if (!element) return;
+                if (mobileBrand.matches) {
+                    element.setAttribute('data-aos', entry[1]);
+                } else {
+                    element.removeAttribute('data-aos');
+                    element.classList.remove('aos-animate');
+                }
+            });
+        }
+        syncMobileTargets();
         var reveals = Array.from(root.querySelectorAll('[data-aos]'));
         var pending = false;
         var clamp = function (n) { return Math.max(0, Math.min(1, n)); };
@@ -14,6 +36,7 @@
             pending = false;
             var height = window.innerHeight;
             reveals.forEach(function (element) {
+                if (!element.hasAttribute('data-aos')) return;
                 var rect = element.getBoundingClientRect();
                 var center = element.dataset.aosAnchorPlacement === 'center-center';
                 // 중앙 기준 효과는 카드 중앙이 화면 중앙에 도착할 때 표시합니다.
@@ -35,7 +58,7 @@
             // 데스크톱: 600 → 1200px. 모바일: 화면 안에서 비례 확대합니다.
             var max = Math.min(1200, document.documentElement.clientWidth - 40);
             var min = Math.min(600, max * .78);
-            if (reduced.matches || height <= 650) progress = 1;
+            if (reduced.matches || (height <= 650 && !mobileBrand.matches)) progress = 1;
             card.style.width = (min + (max - min) * progress) + 'px';
         }
         function schedule() {
@@ -44,6 +67,12 @@
         root.classList.add('brand-motion');
         window.addEventListener('scroll', schedule, { passive: true });
         window.addEventListener('resize', schedule);
+        mobileBrand.addEventListener('change', function () {
+            syncMobileTargets();
+            // 화면 크기 변경 시 새 대상도 애니메이션 제어 목록에 포함합니다.
+            reveals = Array.from(root.querySelectorAll('[data-aos]'));
+            schedule();
+        });
         window.addEventListener('load', schedule);
         reduced.addEventListener('change', schedule);
         if (document.fonts) document.fonts.ready.then(schedule);
